@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <meta property="og:title" content="Hulduheimar Skagafjarðar" />
+        <meta property="og:site_name" content="Lifandi Landslag"/>
+        <meta property="og:image" content="http://lifandilandslag.is/img/splash-logo.png" />
+        <meta property="og:description" content="" />
+
+		<link href="http://fonts.googleapis.com/css?family=Vollkorn:400italic,400" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="leaflet/leaflet.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+		<link rel="stylesheet" href="css/MarkerCluster.css" />
+
+        <title>Lifandi Landslag</title>
+
+    </head>
+    <body>
+    	
+    	<div id="mapContainer"></div>
+		
+    	<div id="msgOverlay"></div>
+    	
+    	<a id="labelLogo">Lifandi Landslag</a>
+		<a id="btnLogo"></a>
+
+		<a id="btnLocation"></a>
+
+		<div id="audio-control">
+			<a class="audio-play-button"></a>
+			<div class="audio-name-display"></div>
+			<div class="audio-time-display"></div>
+		</div>
+
+		<div id="menuOverlay"></div>
+		<div id="menu">
+			<ul class="menu touch-list">
+				<li class="main"><a rel="front"><span class="is">Forsíða</span><span class="en">Home</span></a></li>
+				<li class="main is"><a class="lang-en" rel="language">English</a></li>
+				<li class="main en"><a class="lang-is" rel="language">Íslenska</a></li>
+				<li><a rel="sturlunga"><h3>
+					<span class="is">Íslendingasögur</span>
+					<span class="en">Sagas</span>
+				</h3></a></li>
+				<li><a rel="services"><h3>
+					<span class="is">Þjónusta</span>
+					<span class="en">Service</span>
+				</h3></a></li>
+				<li><a rel="hiking"><h3>
+					<span class="is">Gönguleiðir</span>
+					<span class="en">Hiking trails</span>
+				</h3></a></li>
+				<li><a rel="legends"><h3>
+					<span class="is">Þjóðsögur</span>
+					<span class="en">Folk legends</span>
+				</h3></a></li>
+				<li class="sub"><a class="type selected" rel="all"><span class="marker"></span>
+					<span class="is">Allar</span>
+					<span class="en">All</span>
+				</a></li>
+				<div id="storyTypesContainer"></div>
+			</ul>
+		</div>
+
+		<div class="content-panel large-toolbar visible" id="introView">
+			<div class="waves"></div>
+			
+			<div class="header">
+				<h2>Lifandi landslag</h2>
+			</div>
+			
+			<div id="appInfoContainer" class="view-container">
+				<div class="content visible">
+					
+					<div class="is">
+						<p class="larger">Lifandi landslag er smáforrit sem gerir ferðina um Skagafjörð enn áhugaverðari!</p>
+
+						<p>Undir hverjum steini leynast sögur, bæði þjóðsögur og sögur af hetjum fornsagnanna. Þær leiða þig um sögustaði sína og kynna Skagafjörð eins og þú hefur aldrei séð hann áður. Á sama stað finnurðu einnig upplýsingar um helstu afþreyingu og þjónustu á svæðinu – Allt sem þú þarft í einu appi!</p>
+
+						<p>Lifandi landslag staðsetur símann, og sýnir þér kort af Skagafirði. Þar verða merktir inn allir sögustaðir sem svæðið hefur upp á að bjóða sem tengjast þjóðsögum, Grettissögu og Sturlungu (í samvinnu við verkefnið Á Sturlungaslóð). Auk þess verður öll helsta þjónusta og afþreying sem stendur til boða merkt inn á kortið, svo þú veist nákvæmlega hvað er langt í næsta hest eða hamborgara! 
+Staðirnir verða merktir á kortið, þú ýtir á merkið og færð upplýsingar um þjónustuna, eða velur hvort þú vilt lesa eða hlusta á söguna. Svo slakar þú á og nýtur alls sem Skagafjörður hefur upp á að bjóða!</p>
+
+						<p>Lifandi landslag er ný og spennandi leið til að kynnast þeim menningararfi sem Skagafjörður hefur upp á að bjóða, og er það eina sem þú þarft á ferð þinni um Skagafjörð!</p>
+
+						<p class="visible-desktop">
+							<a href="https://play.google.com/store/apps/details?id=com.trily.lifandilandslag">
+						  		<img alt="Android app on Google Play"
+						       src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+							</a><br/>
+							<a href="https://geo.itunes.apple.com/us/app/lifandi-landslag/id1007335378?mt=8" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+						</p>
+					</div>
+
+					<div class="en">
+						<p>Hidden stories can be found at every rock and farm in Skagafjörður. They tell of the hidden people, heroes of Icelandic Sagas, farmers’ sons and trolls. The stories will lead you through the settings of the tales, and with that, through Skagafjörður. On your way, you can find the best attractions and restaurants the area has to offer.<br/>
+						All in all, the only thing you need for your travels in Skagafjörður</p>
+						<p>When you open the app, it shows you a map of Skagafjörður. The maps shows the settings of the tales and the location of services and attractions. Press the mark on the map to read or hear the story, sit back and enjoy some of the heritage Skagafjörður has to offer! </p>
+						<p class="visible-desktop"><a href="https://play.google.com/store/apps/details?id=com.trily.lifandilandslag">
+						  <img alt="Android app on Google Play"
+						       src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+						</a></p>
+					</div>
+
+				</div>
+			</div>
+			
+			<div class="bottom-overlay"></div>
+			
+
+			<div class="toolbar large">
+				
+				<a class="button" id="btnOpenMap">
+					<div class="icon map"></div>
+					<div class="label">
+						<span class="is">Opna kort</span>
+						<span class="en">Open map</span>
+					</div>
+				</a>
+				
+				<a class="button" id="btnViewServices">
+					<div class="icon list"></div>
+					<div class="label">
+						<span class="is">Þjónusta</span>
+						<span class="en">Service</span>
+					</div>
+				</a>
+				
+			</div>
+		
+		</div>
+
+		<div class="content-panel small-toolbar" id="aboutView">
+			<div class="waves"></div>
+			
+			<div class="header">
+				<h2>Lifandi landslag</h2>
+			</div>
+			
+			<div id="appInfoContainer" class="view-container">
+				<div class="content visible">
+					<p>Um forritið.</p>
+				</div>
+			</div>
+			
+			<div class="bottom-overlay"></div>
+
+			<div class="toolbar small">
+				
+				<a id="btnClosePanel" class="button">
+					<div class="label">
+						<span class="is">Loka</span>
+						<span class="en">Close</span>
+					</div>
+				</a>
+				
+			</div>
+		
+		</div>
+
+		<div class="content-panel small-toolbar header-panel" id="storyView">
+			<div class="waves"></div>
+			
+			<div id="storyViewContainer" class="view-container"></div>
+			
+			<div class="bottom-overlay"></div>
+			
+			<div class="toolbar small">
+				
+				<a id="viewTextButton" class="button selected">
+					<div class="arrow"></div>
+					<div class="icon text right"></div>
+					<div class="label">
+						<span class="is">Lesa</span>
+						<span class="en">Read</span>
+					</div>
+				</a>
+				
+				<a id="viewAudioButton" class="button">
+					<div class="arrow"></div>
+					<div class="icon audio"></div>
+					<div class="label">
+						<span class="is">Hlusta</span>
+						<span class="en">Listen</span>
+					</div>
+				</a>
+				
+			</div>
+
+		</div>
+
+		<div class="content-panel small-toolbar" id="placeView">
+			<div class="waves"></div>
+			
+			<div id="placeViewContainer" class="view-container"></div>
+			
+			<div class="bottom-overlay"></div>
+			
+			<div class="toolbar small">
+				
+				<a id="btnClosePanel" class="button">
+					<div class="label">
+						<span class="is">Loka</span>
+						<span class="en">Close</span>
+					</div>
+				</a>
+				
+			</div>
+
+		</div>
+
+		<div class="content-panel small-toolbar" id="listIntroView">
+			<div class="waves"></div>
+
+			<div class="header">
+				<h2></h2>
+			</div>
+			
+			<div class="view-container">
+				<div class="content visible">
+				</div>
+			</div>
+			
+			<div class="bottom-overlay"></div>
+			
+			<div class="toolbar small">
+				
+				<a id="btnClosePanel" class="button">
+					<div class="label">
+						<span class="is">Loka</span>
+						<span class="en">Close</span>
+					</div>
+				</a>
+				
+			</div>
+
+		</div>
+
+		<div id="splash">
+			<div class="splash-text">
+				<div class="app-logo"></div>
+				<div class="clearfix"></div>
+				<div class="app-logo-name"></div>
+				<div class="clearfix"></div>
+				<p>Hulduheimar Skagafjarðar</p>
+				<div class="lang-select">
+					<div class="title">Tungumál / Language</div>
+					<a rel="is">Íslenska</a>
+					<a rel="en">English</a>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/template" id="storyTypesTemplate">
+			<% _.each(types, function(item, index)  { %>
+				<li class="sub"><a class="type" rel="<%= item.get('id') %>"><span class="marker"></span><%= item.get('name').replace('saga', 'sögur') %></a></li>
+			<% }); %>
+		</script>
+		
+		<script type="text/template" id="storyViewTemplate">		
+			<div class="header">
+				<h2><%= model.get('title') %></h2>
+				
+				<div class="share">
+					<a class="button"></a>
+				</div>
+				
+				<div class="info">
+					<% if (model.get('type') > 0) { %>
+						<div class="item type">
+							<%= app.types.get(model.get('type')).get('name') %>
+						</div>
+					<% } %>
+					<% if (model.get('url')) { %>
+						<div class="item url">
+							<a onclick="if (navigator.app && navigator.app.loadUrl) { navigator.app.loadUrl('<%= model.get('url') %>', { openExternal:true }); } else { window.open('<%= model.get('url') %>', '_blank'); }" href="#">
+								<span class="is">Vefsíða</span>
+								<span class="en">Website</span>
+							</a>
+						</div>
+					<% } %>
+					<% if ((app.storiesList.currentList != 'services') && app.placeList.get(model.get('place')) != undefined) { %>
+						<div class="item location">
+							<%= app.placeList.get(model.get('place')).get('name') %>
+						</div>
+					<% } %>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+				
+			<div class="content text visible">
+				<%= model.get('html') %>
+				<% if (model.get('source') != '') { %>
+				<div class="source"><%= model.get('source') %></div>
+				<% } %>
+			</div>
+
+			<div class="content audio" style="background-image: url(<%= model.get('image') %>)">
+				<div class="audio-control">
+					<a class="audio-play-button"></a>
+
+					<div class="audio-time-display"></div>
+
+					<div class="audio-position">
+						<div class="line"></div>
+						<div class="knob"></div>
+					</div>
+				</div>
+			</div>
+		</script>
+		
+		<script type="text/template" id="placeViewTemplate">		
+			<div class="header icon"><div class="icon location"></div><h2><%= placeName %></h2></div>
+				
+			<div class="content text visible">
+				<ul class="stories-list touch-list">
+				<% _.each(stories, function(item, index)  { %>
+					<li><a class="type"data-place="<%= placeId %>" data-story="<%= item.get('id') %>"><%= item.get('title') %></a></li>
+				<% }); %>
+				</ul>
+			</div>
+
+		</script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="leaflet/leaflet.js"></script>
+        <script type="text/javascript" src="js/leaflet.markercluster-src.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/mapbox.standalone.js"></script>
+        <script type="text/javascript" src="js/backbone-min.js"></script>
+        <script type="text/javascript" src="js/backbone.epoxy.min.js"></script>        
+        <script type="text/javascript" src="js/prefixfree.min.js"></script>
+		<script type="text/javascript" src="js/fastclick.js"></script>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+
+        	function isPhoneGap() {
+        		return (typeof(PhoneGap) != 'undefined' || typeof(phonegap) != 'undefined' || typeof(cordova) != 'undefined');
+//				return document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
+			}
+
+			function hasAudio() {
+				var a = document.createElement('audio');
+				return !!(a.canPlayType && a.canPlayType('audio/mpeg;').replace(/no/, ''));
+//				return typeof(Media) != 'undefined';
+			}
+
+			function is_iOS() {
+				return navigator.userAgent.match(/(iPhone|iPod|iPad|iOS)/) ? true : false;
+			}
+
+        	var app = new App();
+        	if (isPhoneGap()) {
+	            app.initialize();
+	            console.log('running in cordova');
+	        }
+	        else {
+				app.onDeviceReady(app);
+				console.log('running in browser');
+			}
+
+        </script>
+    </body>
+</html>

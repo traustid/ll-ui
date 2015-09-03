@@ -1,0 +1,317 @@
+{
+	"intro":{
+		"id":"266",
+		"title":"Velkomin á Sturlungaslóð",
+		"source":"",
+		"hasAudio": "true"
+	},
+
+	"data":[
+		{
+			"id":"162",
+			"title":"Sturlunga: Hegranesþing",
+			"source":"",
+			"places":[62],
+			"hasAudio": "true"
+		},
+		{
+			"id":"234",
+			"title":"Sturlunga: Tóftabrotin",
+			"source":"",
+			"places":[62],
+			"hasAudio": "true"
+		},
+
+
+		{
+			"id":"163",
+			"title":"Sturlunga: Víðimýri",
+			"source":"",
+			"places":[111],
+			"hasAudio": "true"
+		},
+
+
+
+		{
+			"id":"164",
+			"title":"Sturlunga: Hólar",
+			"source":"",
+			"places":[68],
+			"hasAudio": "true"
+		},
+		{
+			"id":"236",
+			"title":"Sturlunga: Guðmundur góði Arason",
+			"source":"",
+			"places":[68],
+			"hasAudio": "true"
+		},
+		{
+			"id":"237",
+			"title":"Sturlunga: Biskupsstóll og biskupar",
+			"source":"",
+			"places":[68],
+			"hasAudio": "true"
+		},
+		{
+			"id":"238",
+			"title":"Sturlunga: Kirkjan",
+			"source":"",
+			"places":[68],
+			"hasAudio": "true"
+		},
+		{
+			"id":"239",
+			"title":"Sturlunga: Minjar",
+			"source":"",
+			"places":[68],
+			"hasAudio": "true"
+		},
+		{
+			"id":"240",
+			"title":"Sturlunga: Skóli",
+			"source":"",
+			"places":[68],
+			"hasAudio": "true"
+		},
+
+
+
+
+
+
+		{
+			"id":"165",
+			"title":"Sturlunga: Víðines",
+			"source":"",
+			"places":[112],
+			"hasAudio": "true"
+		},
+		{
+			"id":"241",
+			"title":"Sturlunga: Kolbeinn Tumason",
+			"source":"",
+			"places":[111, 112],
+			"hasAudio": "true"
+		},
+
+
+
+
+
+		{
+			"id":"252",
+			"title":"Sturlunga: Miklibær",
+			"source":"",
+			"places":[28],
+			"hasAudio": "true"
+		},
+		{
+			"id":"253",
+			"title":"Sturlunga: Sighvatur Sturluson",
+			"source":"",
+			"places":[28],
+			"hasAudio": "true"
+		},
+		{
+			"id":"254",
+			"title":"Sturlunga: Kálfur Guttormsson",
+			"source":"",
+			"places":[28],
+			"hasAudio": "true"
+		},
+
+
+
+
+
+
+
+		{
+			"id":"166",
+			"title":"Sturlunga: Fosslaug",
+			"source":"",
+			"places":[14],
+			"hasAudio": "true"
+		},
+		{
+			"id":"242",
+			"title":"Sturlunga: Baðferðir",
+			"source":"",
+			"places":[14],
+			"hasAudio": "true"
+		},
+
+
+
+
+		{
+			"id":"167",
+			"title":"Sturlunga: Örlygsstaðir",
+			"source":"",
+			"places":[113],
+			"hasAudio": "true"
+		},
+		{
+			"id":"243",
+			"title":"Sturlunga: Sturla Sighvatsson",
+			"source":"",
+			"places":[113],
+			"hasAudio": "true"
+		},
+
+
+
+
+		{
+			"id":"168",
+			"title":"Sturlunga: Selvík á Skaga",
+			"source":"",
+			"places":[114],
+			"hasAudio": "true"
+		},
+
+
+
+
+		{
+			"id":"169",
+			"title":"Sturlunga: Silfrastaðir",
+			"source":"",
+			"places":[31],
+			"hasAudio": "true"
+		},
+		{
+			"id":"245",
+			"title":"Sturlunga: Varnarbardagar Ásbirninga 1238-1246",
+			"source":"",
+			"places":[31],
+			"hasAudio": "true"
+		},
+
+
+
+
+
+		{
+			"id":"170",
+			"title":"Sturlunga: Haugsnes",
+			"source":"",
+			"places":[115],
+			"hasAudio": "true"
+		},
+		{
+			"id":"246",
+			"title":"Sturlunga: Brandur Kolbeinsson",
+			"source":"",
+			"places":[115],
+			"hasAudio": "true"
+		},
+		{
+			"id":"247",
+			"title":"Sturlunga: Þórður kakali",
+			"source":"",
+			"places":[115],
+			"hasAudio": "true"
+		},
+
+
+
+
+
+
+		{
+			"id":"171",
+			"title":"Sturlunga: Flugumýri",
+			"source":"",
+			"places":[116],
+			"hasAudio": "true"
+
+		},
+		{
+			"id":"244",
+			"title":"Sturlunga: Kolbeinn ungi",
+			"source":"",
+			"places":[114, 116],
+			"hasAudio": "true"
+		},
+		{
+			"id":"248",
+			"title":"Sturlunga: Gissur Þorvaldsson",
+			"source":"",
+			"places":[116],
+			"hasAudio": "true"
+		},
+
+
+
+
+		{
+			"id":"172",
+			"title":"Sturlunga: Geldingaholt",
+			"source":"",
+			"places":[117],
+			"hasAudio": "true"
+		},
+		{
+			"id":"250",
+			"title":"Sturlunga: Jórunn Kálfsdóttir og Brandur Kolbeinsson",
+			"source":"",
+			"places":[117],
+			"hasAudio": "true"
+		},
+		{
+			"id":"251",
+			"title":"Sturlunga: Kálfur og Þorgeir Brandssynir",
+			"source":"",
+			"places":[117],
+			"hasAudio": "true"
+		},
+		{
+			"id":"248",
+			"title":"Sturlunga: Gissur Þorvaldsson",
+			"source":"",
+			"places":[116, 117]
+		},
+
+
+
+
+
+		{
+			"id":"173",
+			"title":"Sturlunga: Reynistaður",
+			"source":"",
+			"places":[18],
+			"hasAudio": "true"
+		},
+
+
+
+
+		{
+			"id":"256",
+			"title":"Grettis saga: Hegranesþing",
+			"source":"",
+			"places":[62],
+			"hasAudio": "true"
+		},
+		
+		{
+			"id":"257",
+			"title":"Grettis saga: Drangey",
+			"source":"",
+			"places":[96],
+			"hasAudio": "true"
+		},
+		
+		{
+			"id":"274",
+			"title":"Grettis saga: Drangey, framhald",
+			"source":"",
+			"places":[96],
+			"hasAudio": "true"
+		}
+	]
+}

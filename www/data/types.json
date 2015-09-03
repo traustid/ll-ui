@@ -1,0 +1,114 @@
+{
+	"types":[
+		{
+			"id":"1",
+			"name":"<span class=\"is\">Draugasaga</span><span class=\"en\">Ghosts</span>",
+			"category":"stories"
+		},
+		{
+			"id":"2",
+			"name":"<span class=\"is\">Huldufólkssaga</span><span class=\"en\">Elves</span>",
+			"category":"stories"
+		},
+		{
+			"id":"3",
+			"name":"<span class=\"is\">Galdrasaga</span><span class=\"en\">Whichcraft</span>",
+			"category":"stories"
+		},
+		{
+			"id":"4",
+			"name":"<span class=\"is\">Náttúrusaga</span><span class=\"en\">Natures story</span>",
+			"category":"stories"
+		},
+		{
+			"id":"5",
+			"name":"<span class=\"is\">Óvættasaga</span><span class=\"en\">Monsters</span>",
+			"category":"stories"
+		},
+		{
+			"id":"7",
+			"name":"<span class=\"is\">Útilegumannasaga</span><span class=\"en\">Outlaws</span>",
+			"category":"stories"
+		},
+		{
+			"id":"8",
+			"name":"<span class=\"is\">Kynjasaga</span><span class=\"en\">Strange Stories</span>",
+			"category":"stories"
+		},
+		{
+			"id":"9",
+			"name":"<span class=\"is\">Mannlífssaga</span><span class=\"en\">Folk life story</span>",
+			"category":"stories"
+		},
+		{
+			"id":"11",
+			"name":"<span class=\"is\">Örnefnasaga</span><span class=\"en\">Place names story</span>",
+			"category":"stories"
+		},
+		{
+			"id":"12",
+			"name":"<span class=\"is\">Verslun</span><span class=\"en\">Supermarket</span>",
+			"category":"service"
+		},
+		{
+			"id":"13",
+			"name":"<span class=\"is\">Lögregla</span><span class=\"en\">Police</span>",
+			"category":"service"
+		},
+		{
+			"id":"14",
+			"name":"<span class=\"is\">Sjúkrahús</span><span class=\"en\">Hospital</span>",
+			"category":"service"
+		},
+		{
+			"id":"15",
+			"name":"<span class=\"is\">Verkstæði</span><span class=\"en\">Garage</span>",
+			"category":"service"
+		},
+		{
+			"id":"16",
+			"name":"<span class=\"is\">Veitingastaður</span><span class=\"en\">Restaurant</span>",
+			"category":"service"
+		},
+		{
+			"id":"17",
+			"name":"<span class=\"is\">Hótel</span><span class=\"en\">Hotel</span>",
+			"category":"service"
+		},
+		{
+			"id":"18",
+			"name":"<span class=\"is\">Sundlaug</span><span class=\"en\">Swimming Pool</span>",
+			"category":"service"
+		},
+		{
+			"id":"19",
+			"name":"<span class=\"is\">Náttúrulaug</span><span class=\"en\">Thermal Pool</span>",
+			"category":"service"
+		},
+		{
+			"id":"20",
+			"name":"<span class=\"is\">Tjaldstæði</span><span class=\"en\">Camping</span>",
+			"category":"service"
+		},
+		{
+			"id":"21",
+			"name":"<span class=\"is\">Afþreying</span><span class=\"en\">Recreation</span>",
+			"category":"service"
+		},
+		{
+			"id":"22",
+			"name":"<span class=\"is\">Safn</span><span class=\"en\">Museum</span>",
+			"category":"service"
+		},
+		{
+			"id":"23",
+			"name":"<span class=\"is\">Bakarí / Kaffihús</span><span class=\"en\">Bakery / Coffee house</span>",
+			"category":"service"
+		},
+		{
+			"id":"24",
+			"name":"<span class=\"is\">Gönguleið</span><span class=\"en\">Trailing path</span>",
+			"category":"hiking"
+		}
+	]
+}

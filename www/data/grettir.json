@@ -1,0 +1,19 @@
+{
+	"introTitle": "Grettis saga",
+	"introText": "",
+	"data":[
+		{
+			"id":"256",
+			"title":"Grettis saga: Hegranesþing",
+			"source":"",
+			"places":[62]
+		},
+		{
+			"id":"257",
+			"title":"Grettis saga: Drangey",
+			"source":"",
+			"places":[96]
+		},
+
+	]
+}

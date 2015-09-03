@@ -1,0 +1,115 @@
+{
+	"intro":{
+		"id":"267",
+		"title":"Skagafjörður in the Middle Ages",
+		"source":"",
+		"hasAudio": "true"
+	},
+
+
+	"data":[
+		{
+			"id":"174",
+			"title":"Sturlunga: Flugumýri farm",
+			"source":"",
+			"places":[116],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"175",
+			"title":"Sturlunga: Geldingaholt farm",
+			"source":"",
+			"places":[117],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"176",
+			"title":"Sturlunga: Haugsnes peninsula",
+			"source":"",
+			"places":[115],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"177",
+			"title":"Sturlunga: Hegranes assembly site",
+			"source":"",
+			"places":[62],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"178",
+			"title":"Sturlunga: Hólar",
+			"source":"",
+			"places":[68],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"179",
+			"title":"Sturlunga: Reynistaður church farm",
+			"source":"",
+			"places":[18],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"180",
+			"title":"Sturlunga: Selvík ",
+			"source":"",
+			"places":[114],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"181",
+			"title":"Sturlunga: Víðimýri church farm",
+			"source":"",
+			"places":[111],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"182",
+			"title":"Sturlunga: Örlygsstaðir",
+			"source":"",
+			"places":[113],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"258",
+			"title":"Grettis saga: Hegranesþing",
+			"source":"",
+			"places":[62],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"259",
+			"title":"Grettis saga: Drangey",
+			"source":"",
+			"places":[96],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"275",
+			"title":"Grettis saga: Drangey, part 2",
+			"source":"",
+			"places":[96],
+			"hasAudio": "true"
+		},
+
+		{
+			"id":"276",
+			"title":"Grettis saga: Drangey, part 3",
+			"source":"",
+			"places":[96],
+			"hasAudio": "true"
+		}
+	]
+}

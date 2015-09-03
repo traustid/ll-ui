@@ -1,0 +1,48 @@
+{
+	"third-party-library": [
+		{
+			"name": "Apache Cordova",
+			"url": "http://cordova.apache.org/"
+		},
+		{
+			"name": "Backbone.js",
+			"url": "http://backbonejs.org/"
+		},
+		{
+			"name": "Leaflet",
+			"url": "http://leafletjs.com/"
+		},
+		{
+			"name": "MapBox.js",
+			"url": "https://www.mapbox.com"
+		},
+		{
+			"name": "jQuery",
+			"url": "http://jquery.com/"
+		},
+		{
+			"name": "Underscore.js",
+			"url": "http://underscorejs.org/"
+		},
+		{
+			"name": "Fastclick",
+			"url": "https://github.com/ftlabs/fastclick"
+		}
+	],
+	"map-data": [
+		{
+			"name": "Byggt á gögnum frá Landmælingum Íslands",
+			"url": "http://www.lmi.is",
+			"extra": "http://www.lmi.is/wp-content/uploads/2013/10/Almskilm.pdf"
+		},
+		{
+			"name": "Byggt á gögnum frá Náttúrufræðistofnun Íslands",
+			"url": "http://www.ni.is",
+			"extra": "http://www.ni.is/media/stofnunin/stof_annad/Leyfi-fyrir-gjaldfrals-NI-gogn_Almennir-skilmalar_20131121.pdf"
+		},
+		{
+			"name": "Geofabrik GmbH / OpenStreetMap",
+			"url": "http://download.geofabrik.de/europe/iceland.html"
+		}
+	]
+}
