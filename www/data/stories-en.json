@@ -21,7 +21,7 @@
 			"id":"185",
 			"title":"Galdra Loftur – Loftur the sorcerer",
 			"source":"",
-			"type":"3",
+			"type":"8",
 			"places":[68],
 			"hasAudio": "true"
 			
@@ -30,7 +30,7 @@
 			"id":"186",
 			"title":"The Whalescree by Mt. Tindastóll",
 			"source":"",
-			"type":"3",
+			"type":"8",
 			"places":[5]
 			
 		},
@@ -56,7 +56,7 @@
 			"id":"189",
 			"title":"Outlaws in Staðarfjöll",
 			"source":"",
-			"type":"10",
+			"type":"8",
 			"places":[18]
 			
 		},
@@ -90,7 +90,7 @@
 			"id":"193",
 			"title":"The Origin of Drangey",
 			"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 280. MS: Lbs Allrah. nr. 204. ",
-			"type":"5",
+			"type":"8",
 			"places":[96],
 			"hasAudio": "true"
 		},
@@ -98,7 +98,7 @@
 			"id":"194",
 			"title":"The Curchyard in Barð",
 			"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 136-137. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,130-131. MS: Lbs ",
-			"type":"5",
+			"type":"8",
 			"places":[82],
 			"hasAudio": "true"			
 		},
@@ -136,7 +136,7 @@
 			"id":"199",
 			"title":"Úlfsvatn",
 			"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), II, 162-164; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), II,164-166. MS: Lb",
-			"type":"10",
+			"type":"8",
 			"places":[44]
 		},
 		{
@@ -158,7 +158,7 @@
 			"id":"202",
 			"title":"Tómas in Nautabú",
 			"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), III, 294.",
-			"type":"3",
+			"type":"8",
 			"places":[45],
 			"hasAudio": "true"
 		},
@@ -166,7 +166,7 @@
 			"id":"203",
 			"title":"The devil fertilizes the fields for reverend Hálfdán",
 			"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 515. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 500.MS: Lbs 530,64.",
-			"type":"3",
+			"type":"8",
 			"places":[79]
 		},
 		{

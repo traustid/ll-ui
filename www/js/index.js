@@ -488,6 +488,30 @@ var MapLib = function() {
 		iconAnchor: [16, 36],
 		popupAnchor: [0, -24]
 	});
+	this.audioMarkerIcon = L.divIcon({
+		className: 'marker-icon audio',
+		iconSize: [32, 42],
+		iconAnchor: [16, 36],
+		popupAnchor: [0, -24]
+	});
+	this.audioMarkerIconBlue = L.divIcon({
+		className: 'marker-icon audio-blue',
+		iconSize: [32, 42],
+		iconAnchor: [16, 36],
+		popupAnchor: [0, -24]
+	});
+	this.markerIconBlue = L.divIcon({
+		className: 'marker-icon blue',
+		iconSize: [32, 42],
+		iconAnchor: [16, 36],
+		popupAnchor: [0, -24]
+	});
+	this.markerIconGreen = L.divIcon({
+		className: 'marker-icon green',
+		iconSize: [32, 42],
+		iconAnchor: [16, 36],
+		popupAnchor: [0, -24]
+	});
 	this.locationIcon = L.divIcon({
 		className: 'location-icon',
 		iconSize: [28, 28],
@@ -555,6 +579,13 @@ var MapLib = function() {
 			attributionControl: false,
 			maxBounds: this.setBoundaries ? new L.LatLngBounds(this.maxBoundaries.southWest, this.maxBoundaries.northEast) : null
 		});
+
+		if (!isPhoneGap()) {
+			new L.Control.Zoom({
+				position: 'bottomleft'
+			}).addTo(this.map);
+		}
+
 		this.map.on('popupopen', function(event) {
 			$('.leaflet-map-pane .leaflet-popup-content-wrapper .leaflet-popup-content .stories a').each(function() {
 				$(this).click(function() {
@@ -596,17 +627,27 @@ var MapLib = function() {
 	};
 
 	this.createMarker = function(data, icon) {
+		var hasAudio = _.find(this.storiesList.byPlace(data.get('id')).models, function(story) {
+			return story.get('hasAudio');
+		}) ? true : false;
+
+		console.log(this.storiesList.currentList);
+
 		var marker = L.marker([data.get('coordinates')[0], data.get('coordinates')[1]], {
 			title: data.get('name'),
 			id: data.get('id'),
-			icon: this.markerIcon
+			icon: this.storiesList.currentList == 'services' ? 
+				this.markerIconGreen : 
+				this.storiesList.currentList == 'sturlunga' ? 
+				(hasAudio ? this.audioMarkerIconBlue : this.markerIconBlue) : 
+				hasAudio ? this.audioMarkerIcon : this.markerIcon
 		});
 /*
 		var markerContent = '<h3>' + data.get('name') + '</h3>';
 		var stories = app.storiesList.byPlace(data.get('id'));
 
-		var storiesHtml = '';
-		stories.each(function(story) {
+		var storiesHtml = ''
+;		stories.each(function(story) {
 			storiesHtml += '<a data-place="' + data.get('id') + '" data-story="' + story.get('id') + '">' + story.get('title') + '</a>';
 		});
 		markerContent += '<div class="stories">' + storiesHtml + '</div>';
@@ -758,38 +799,6 @@ var App = function() {
 		
 		_this.types = new Types();
 
-		_this.mapCollection = new MapCollection();
-		_this.mapCollection.on('reset', function() {
-			_this.mapLib.clearMap();
-			_this.mapLib.addMarkers(_this.mapCollection, function(event, _thisMarker) {
-				_this.markerClick(_this, event, _thisMarker);
-			});
-
-			if (_this.currentLocation != undefined) {
-//				_this.mapLib.updateMarkerRestriction(_this.currentLocation);
-			}
-			if (!isPhoneGap()) {
-				setTimeout(function() {
-					_this.appRouter = new AppRouter();
-					_this.appRouter.on('route:mainView', function() {
-						if (_this.currentView != 'introView') {
-							_this.closeViews();
-						}
-					});
-					_this.appRouter.on('route:placeView', function(placeId) {
-
-					});
-					_this.appRouter.on('route:storyPlaceView', function(placeId, storyId) {
-						_this.storiesList.get(storyId).set({
-							place: placeId
-						});
-						_this.viewStory(_this.storiesList.get(storyId));
-					});
-					Backbone.history.start();					
-				}, 1000);
-			}
-
-		});
 
 		if (_this.restrictMarkers) {
 			_this.getLocation(_this);
@@ -797,7 +806,40 @@ var App = function() {
 		}		
 
 		_this.storiesList = new StoriesList();
+		_this.mapLib.storiesList = _this.storiesList;
 		_this.storiesList.on('reset', function() {
+			_this.mapCollection = new MapCollection();
+			_this.mapCollection.on('reset', function() {
+				_this.mapLib.clearMap();
+				_this.mapLib.addMarkers(_this.mapCollection, function(event, _thisMarker) {
+					_this.markerClick(_this, event, _thisMarker);
+				});
+
+				if (_this.currentLocation != undefined) {
+	//				_this.mapLib.updateMarkerRestriction(_this.currentLocation);
+				}
+				if (!isPhoneGap()) {
+					setTimeout(function() {
+						_this.appRouter = new AppRouter();
+						_this.appRouter.on('route:mainView', function() {
+							if (_this.currentView != 'introView') {
+								_this.closeViews();
+							}
+						});
+						_this.appRouter.on('route:placeView', function(placeId) {
+
+						});
+						_this.appRouter.on('route:storyPlaceView', function(placeId, storyId) {
+							_this.storiesList.get(storyId).set({
+								place: placeId
+							});
+							_this.viewStory(_this.storiesList.get(storyId));
+						});
+						Backbone.history.start();					
+					}, 1000);
+				}
+
+			});
 
 			_this.placeList = new PlaceList();
 			_this.placeList.on('reset', function() {
@@ -971,7 +1013,8 @@ var App = function() {
 								break;
 							case 'legends':
 								_this.storiesList.loadData('stories');
-								$('#menu ul li a[rel=all]').addClass('selected');
+//								$('#menu ul li a[rel=all]').addClass('selected');
+								$('#legendsSubMenu').toggleClass('open');
 								break;
 							case 'sturlunga':
 								_this.storiesList.loadData('sturlunga');
@@ -1006,7 +1049,9 @@ var App = function() {
 						}
 					}
 
-					_this.menuOut();
+					if (action != 'legends') {
+						_this.menuOut();
+					}
 				});
 			});
 		});
@@ -1025,13 +1070,17 @@ var App = function() {
 			_this.storyView.viewAudio();
 		});
 
-		$('#btnLogo, #labelLogo').click(function() {
+		$('#hamburger, #labelLogo').click(function() {
 			if (_this.menuVisible()) {
 				_this.menuOut();
 			}
 			else {
 				_this.menuIn();
 			}
+		});
+
+		$('#btnLogo').click(function() {
+			_this.setView('introView');
 		});
 
 		$('#btnLocation').click(function() {
@@ -1193,7 +1242,8 @@ var App = function() {
 
 			var storiesHtml = '';
 			stories.each(function(story) {
-				storiesHtml += '<a data-place="' + placeModel.get('id') + '" data-story="' + story.get('id') + '">' + story.get('title') + '</a>';
+				console.log(story);
+				storiesHtml += '<a class="'+(story.get('hasAudio') ? 'has-audio' : '')+'" data-place="' + placeModel.get('id') + '" data-story="' + story.get('id') + '">' + story.get('title') + '</a>';
 			});
 			popupContent += '<div class="stories">' + storiesHtml + '</div>';
 
@@ -1244,6 +1294,7 @@ var App = function() {
     };
 
 	this.menuIn = function() {
+		$('#legendsSubMenu').removeClass('open');
 		$('#menu').addClass('visible');
 		$('#menuOverlay').css('display', 'block');
 	};
