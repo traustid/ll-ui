@@ -1104,7 +1104,7 @@ var App = function() {
         	_this.menuOut();
 		});
 
-		$('#menu').on('swiperight', function(event) {
+		$('#menu').on('swipeleft', function(event) {
         	_this.menuOut();
 		});
 
