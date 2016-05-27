@@ -172,7 +172,9 @@ var StoryTypesView = Backbone.View.extend({
 				return model.get('category') == 'stories';
 			})
 		});
-		$(this.el).html(template);
+		renderHtml(_.bind(function() {
+			$(this.el).html(template);
+		}, this));
 		this.trigger('render');
 
 		return this;
@@ -276,7 +278,10 @@ var StoryView = Backbone.View.extend({
 		var template = _.template($("#storyViewTemplate").html(), {
 			model: this.model
 		});
-		$(this.el).html(template);
+
+		renderHtml(_.bind(function() {
+			$(this.el).html(template);
+		}, this));
 
 		$(this.el).find('.extra-chapter .chapter-content').hide();
 
@@ -315,7 +320,9 @@ var PlaceView = Backbone.View.extend({
 			placeId: this.model.get('placeId'),
 			stories: this.model.get('stories')
 		});
-		$(this.el).html(template);
+		renderHtml(_.bind(function() {
+			$(this.el).html(template);
+		}, this));
 		this.trigger('render');
 
 		return this;
@@ -589,13 +596,14 @@ var MapLib = function() {
 		this.map.on('popupopen', function(event) {
 			$('.leaflet-map-pane .leaflet-popup-content-wrapper .leaflet-popup-content .stories a').each(function() {
 				$(this).click(function() {
-					app.storiesList.get($(this).attr('data-story')).set({
-						place: $(this).attr('data-place')
+					app.storiesList.get($(this).data('story')).set({
+						place: $(this).data('place')
 					});
-					app.viewStory(app.storiesList.get($(this).attr('data-story')));
+
+					app.viewStory(app.storiesList.get($(this).data('story')));
 
 					if (!isPhoneGap()) {
-						app.appRouter.navigate('place/'+$(this).attr('data-place')+'/story/'+$(this).attr('data-story'));
+						app.appRouter.navigate('place/'+$(this).data('place')+'/story/'+$(this).data('story'));
 					}
 				});
 			});
@@ -630,8 +638,6 @@ var MapLib = function() {
 		var hasAudio = _.find(this.storiesList.byPlace(data.get('id')).models, function(story) {
 			return story.get('hasAudio');
 		}) ? true : false;
-
-		console.log(this.storiesList.currentList);
 
 		var marker = L.marker([data.get('coordinates')[0], data.get('coordinates')[1]], {
 			title: data.get('name'),
@@ -697,7 +703,6 @@ var MapLib = function() {
 	};
 
 	this.updateMarkerRestriction = function(center) {
-//		console.log(this.storiesList.currentList);
 
 		if (this.app.storiesList != undefined) {
 			if (this.app.storiesList.currentList != 'services') {
@@ -744,6 +749,8 @@ var App = function() {
 	// Options
 	this.openStoryOnMarkerClick = false;
 
+	this.firstRun = true;
+
 	this.initialize = function() {
 		this.bindEvents();
 	};
@@ -784,18 +791,20 @@ var App = function() {
 	};
 	
 	this.onDeviceReady = function(_this) {
-		if (isPhoneGap()) {		
-			if (localStorage.getItem('lang') != null) {
-				$('#splash .lang-select').css('display', 'none');
+		if (_this.firstRun) {		
+			if (isPhoneGap()) {		
+				if (localStorage.getItem('lang') != null) {
+					$('#splash .lang-select').css('display', 'none');
 
-				window.appLanguage = localStorage.getItem('lang');
-				$(document.body).addClass('lang-'+localStorage.getItem('lang'));
+					window.appLanguage = localStorage.getItem('lang');
+					$(document.body).addClass('lang-'+localStorage.getItem('lang'));
+				}
 			}
-		}
 
-		_this.mapLib = new MapLib();
-		_this.mapLib.createMap('mapContainer');
-		_this.mapLib.app = _this;
+			_this.mapLib = new MapLib();
+			_this.mapLib.createMap('mapContainer');
+			_this.mapLib.app = _this;
+		}
 		
 		_this.types = new Types();
 
@@ -852,42 +861,55 @@ var App = function() {
 		});
 		_this.storiesList.loadData('stories');
 
-		_this.soundManager = new SoundManager();
+		if (_this.firstRun) {
+			_this.soundManager = new SoundManager();
 
-		_this.storyView = new StoryView({
-			el: $("#storyViewContainer")
-		});
-		_this.storyView.on('headerClick', function() {
-			_this.closeViews();
-		});
-		_this.storyView.on('render', function() {
-			if (_this.storyView.model.get('hasAudio') == 'true') {
-				$('#storyView').addClass('small-toolbar');
-			}
-			else {
-				$('#storyView').removeClass('small-toolbar');
-			}
-		});
-		_this.storyView.on('playClick', function() {
-			if (!hasAudio()) {
-				if (_this.networkstatus == 'online') {
-					if (_this.soundManager.media != null) {
-						if (_this.soundManager.mediaStatus == Media.MEDIA_PAUSED) {
-							_this.soundManager.play();
+			_this.storyView = new StoryView({
+				el: $("#storyViewContainer")
+			});
+			_this.storyView.on('headerClick', function() {
+				_this.closeViews();
+			});
+			_this.storyView.on('render', function() {
+				if (_this.storyView.model.get('hasAudio') == 'true') {
+					$('#storyView').addClass('small-toolbar');
+				}
+				else {
+					$('#storyView').removeClass('small-toolbar');
+				}
+			});
+			_this.storyView.on('playClick', function() {
+				if (!hasAudio()) {
+					if (_this.networkstatus == 'online') {
+						if (_this.soundManager.media != null) {
+							if (_this.soundManager.mediaStatus == Media.MEDIA_PAUSED) {
+								_this.soundManager.play();
+							}
+							else {
+								_this.soundManager.pause();
+							}
 						}
-						else {
-							_this.soundManager.pause();
-						}
+					}
+					else {
+						_this.popupMessage('<div class="heading"><span class="is">Ekkert netsamband.</span><span class="en">No internet connection</span></div><span class="is">Ekki er hægt að hlusta á upptökur.</span><span class="en">It is not possible to listen to audio recordings.</span>');
 					}
 				}
 				else {
-					_this.popupMessage('<div class="heading"><span class="is">Ekkert netsamband.</span><span class="en">No internet connection</span></div><span class="is">Ekki er hægt að hlusta á upptökur.</span><span class="en">It is not possible to listen to audio recordings.</span>');
-				}
-			}
-			else {
-				if (_this.soundManager.media != null) {
-					if (isPhoneGap()) {					
-						if (_this.networkstatus == 'online') {
+					if (_this.soundManager.media != null) {
+						if (isPhoneGap()) {					
+							if (_this.networkstatus == 'online') {
+								if (_this.soundManager.mediaStatus == 3) {
+									_this.soundManager.play();
+								}
+								else {
+									_this.soundManager.pause();
+								}
+							}
+							else {
+								_this.popupMessage('<div class="heading"><span class="is">Ekkert netsamband.</span><span class="en">No internet connection</span></div><span class="is">Ekki er hægt að hlusta á upptökur.</span><span class="en">It is not possible to listen to audio recordings.</span>');
+							}
+						}
+						else {
 							if (_this.soundManager.mediaStatus == 3) {
 								_this.soundManager.play();
 							}
@@ -895,260 +917,249 @@ var App = function() {
 								_this.soundManager.pause();
 							}
 						}
-						else {
-							_this.popupMessage('<div class="heading"><span class="is">Ekkert netsamband.</span><span class="en">No internet connection</span></div><span class="is">Ekki er hægt að hlusta á upptökur.</span><span class="en">It is not possible to listen to audio recordings.</span>');
-						}
+					}
+				}
+			});
+			_this.storyView.on('viewAudio', function() {
+				if (_this.networkstatus != 'online' && (isPhoneGap())) {
+					_this.popupMessage('<div class="heading">Ekkert netsamband.</div>Ekki er hægt að hlusta á upptökur.');
+				}
+				else {
+					if (_this.soundManager.media != null && _this.soundManager.get('soundId') == _this.storyView.model.get('id')) {
+						_this.soundManager.play();
 					}
 					else {
-						if (_this.soundManager.mediaStatus == 3) {
-							_this.soundManager.play();
-						}
-						else {
-							_this.soundManager.pause();
-						}
+						_this.soundManager.loadSound(_this.storyView.model.get('id'), true);
 					}
 				}
-			}
-		});
-		_this.storyView.on('viewAudio', function() {
-			if (_this.networkstatus != 'online' && (isPhoneGap())) {
-				_this.popupMessage('<div class="heading">Ekkert netsamband.</div>Ekki er hægt að hlusta á upptökur.');
-			}
-			else {
-				if (_this.soundManager.media != null && _this.soundManager.get('soundId') == _this.storyView.model.get('id')) {
-					_this.soundManager.play();
-				}
-				else {
-					_this.soundManager.loadSound(_this.storyView.model.get('id'), true);
-				}
-			}
-		});
-
-		_this.soundManager.on('mediaStatus', function() {
-			if (_this.soundManager.mediaStatus == 4) {
-				$('#audio-control').removeClass('visible');
-			}
-			if (_this.soundManager.mediaStatus == 3) {
-				$('.audio-play-button').removeClass('playing');
-			}
-			if (_this.soundManager.mediaStatus == 2) {
-				$('.audio-play-button').addClass('playing');
-			}
-		});
-		_this.soundManager.on('audioMonitor', function(monitorData) {
-			$('.audio-time-display').text(formatMinSec(monitorData.posMinutes)+':'+formatMinSec(monitorData.posSeconds)+' / '+formatMinSec(monitorData.durMinutes)+':'+formatMinSec(monitorData.durSeconds));
-
-			var knobPosition = $('.audio-position').width() / (monitorData.duration / monitorData.position);
-			$('.audio-position .knob').css('left', knobPosition);
-		});
-		_this.soundManager.on('loadSound', function() {
-			$('.audio-name-display').text(_this.storiesList.get(_this.soundManager.get('soundId')).get('title'));
-		});
-
-		$('#audio-control').click(function() {
-			_this.setView('storyView');
-			_this.storyView.viewStory(_this.storiesList.get(_this.soundManager.get('soundId')));
-			_this.storyView.viewAudio();
-		});
-
-		_this.placeView = new PlaceView({
-			el: $("#placeViewContainer"),
-			model: new Backbone.Model({
-				placeName: '',
-				stories: []
-			})
-		});
-		_this.placeView.on('itemClick', function(event) {
-			_this.storiesList.get(event.storyId).set({
-				place: event.placeId
 			});
-			_this.viewStory(_this.storiesList.get(event.storyId));
-		});
 
-		$('#audio-control .audio-play-button').click(function(event) {
-			console.log('audio-play-button:click');
-			console.log(_this.soundManager.mediaStatus);
-			event.stopPropagation();
-			if (_this.soundManager.media != null) {
+			_this.soundManager.on('mediaStatus', function() {
+				if (_this.soundManager.mediaStatus == 4) {
+					$('#audio-control').removeClass('visible');
+				}
+				if (_this.soundManager.mediaStatus == 3) {
+					$('.audio-play-button').removeClass('playing');
+				}
 				if (_this.soundManager.mediaStatus == 2) {
-					_this.soundManager.pause();
+					$('.audio-play-button').addClass('playing');
 				}
-				else {
-					_this.soundManager.play();
-				}
-			}
-		});
+			});
+			_this.soundManager.on('audioMonitor', function(monitorData) {
+				$('.audio-time-display').text(formatMinSec(monitorData.posMinutes)+':'+formatMinSec(monitorData.posSeconds)+' / '+formatMinSec(monitorData.durMinutes)+':'+formatMinSec(monitorData.durSeconds));
 
-		_this.storyTypesView = new StoryTypesView({
-			el: $('#storyTypesContainer'),
-			collection: _this.types
-		});
-		_this.storyTypesView.on('render', function() {
-			$('#menu ul li a').each(function() {
-				$(this).click(function() {
-					var action = $(this).attr('rel');
-					$('#menu ul li a').removeClass('selected');
-					$(this).addClass('selected');
-					if ($(this).hasClass('type')) {
-						if (_this.storiesList.currentList == 'sturlunga') {
-							_this.storiesList.loadData('stories');
-							$('#menu ul li a[rel=all]').addClass('selected');
-						}
-						else {
-							if ($(this).attr('rel') == 'all') {
+				var knobPosition = $('.audio-position').width() / (monitorData.duration / monitorData.position);
+				$('.audio-position .knob').css('left', knobPosition);
+			});
+			_this.soundManager.on('loadSound', function() {
+				$('.audio-name-display').text(_this.storiesList.get(_this.soundManager.get('soundId')).get('title'));
+			});
+
+			$('#audio-control').click(function() {
+				_this.setView('storyView');
+				_this.storyView.viewStory(_this.storiesList.get(_this.soundManager.get('soundId')));
+				_this.storyView.viewAudio();
+			});
+
+			_this.placeView = new PlaceView({
+				el: $("#placeViewContainer"),
+				model: new Backbone.Model({
+					placeName: '',
+					stories: []
+				})
+			});
+			_this.placeView.on('itemClick', function(event) {
+				_this.storiesList.get(event.storyId).set({
+					place: event.placeId
+				});
+				_this.viewStory(_this.storiesList.get(event.storyId));
+			});
+
+			$('#audio-control .audio-play-button').click(function(event) {
+				event.stopPropagation();
+				if (_this.soundManager.media != null) {
+					if (_this.soundManager.mediaStatus == 2) {
+						_this.soundManager.pause();
+					}
+					else {
+						_this.soundManager.play();
+					}
+				}
+			});
+
+			_this.storyTypesView = new StoryTypesView({
+				el: $('#storyTypesContainer'),
+				collection: _this.types
+			});
+			_this.storyTypesView.on('render', function() {
+				$('#menu ul li a').each(function() {
+					$(this).click(function() {
+						var action = $(this).attr('rel');
+						$('#menu ul li a').removeClass('selected');
+						$(this).addClass('selected');
+						if ($(this).hasClass('type')) {
+							if (_this.storiesList.currentList == 'sturlunga') {
 								_this.storiesList.loadData('stories');
-								_this.mapCollection.reset(_this.placeList.models);
+								$('#menu ul li a[rel=all]').addClass('selected');
 							}
 							else {
-//								_this.storiesList.loadData('stories');
-								_this.mapCollection.reset(_this.placeList.byType($(this).attr('rel')).models);
+								if ($(this).attr('rel') == 'all') {
+									_this.storiesList.loadData('stories');
+									_this.mapCollection.reset(_this.placeList.models);
+								}
+								else {
+	//								_this.storiesList.loadData('stories');
+									_this.mapCollection.reset(_this.placeList.byType($(this).attr('rel')).models);
+								}
+							}
+							_this.closeViews();
+						}
+						else {
+							switch(action) {
+								case 'front':
+									_this.setView('introView');
+									break;
+								case 'legends':
+									_this.storiesList.loadData('stories');
+	//								$('#menu ul li a[rel=all]').addClass('selected');
+									$('#legendsSubMenu').toggleClass('open');
+									break;
+								case 'sturlunga':
+									_this.storiesList.loadData('sturlunga');
+									break;
+								case 'services':
+									_this.storiesList.loadData('services');
+									break;
+								case 'hiking':
+									_this.storiesList.loadData('hiking');
+									break;
+								case 'about':
+									_this.setView('aboutView');
+									break;
+								case 'language':
+									if ($(this).hasClass('lang-is')) {
+										window.appLanguage = 'is';
+									}
+									if ($(this).hasClass('lang-en')) {
+										window.appLanguage = 'en';
+									}
+
+									localStorage.setItem('lang', window.appLanguage);
+
+									$(document.body).removeClass('lang-is');
+									$(document.body).removeClass('lang-en');
+									$(document.body).addClass('lang-'+window.appLanguage);
+
+									_this.onDeviceReady(_this);
+									_this.menuOut();
+
+									break;
 							}
 						}
-						_this.closeViews();
-					}
-					else {
-						switch(action) {
-							case 'front':
-								_this.setView('introView');
-								break;
-							case 'legends':
-								_this.storiesList.loadData('stories');
-//								$('#menu ul li a[rel=all]').addClass('selected');
-								$('#legendsSubMenu').toggleClass('open');
-								break;
-							case 'sturlunga':
-								_this.storiesList.loadData('sturlunga');
-								break;
-							case 'services':
-								_this.storiesList.loadData('services');
-								break;
-							case 'hiking':
-								_this.storiesList.loadData('hiking');
-								break;
-							case 'about':
-								_this.setView('aboutView');
-								break;
-							case 'language':
-								if ($(this).hasClass('lang-is')) {
-									window.appLanguage = 'is';
-								}
-								if ($(this).hasClass('lang-en')) {
-									window.appLanguage = 'en';
-								}
 
-								localStorage.setItem('lang', window.appLanguage);
-
-								$(document.body).removeClass('lang-is');
-								$(document.body).removeClass('lang-en');
-								$(document.body).addClass('lang-'+window.appLanguage);
-
-								_this.onDeviceReady();
-								_this.menuOut();
-
-								break;
+						if (action != 'legends') {
+							_this.menuOut();
 						}
-					}
-
-					if (action != 'legends') {
-						_this.menuOut();
-					}
+					});
 				});
 			});
-		});
-		
-		FastClick.attach(document.body);
+			
+			FastClick.attach(document.body);
 
-		$('#viewTextButton').click(function(event) {
-			$('#storyView .toolbar a').removeClass('selected');
-			$('#viewTextButton').addClass('selected');
-			_this.storyView.viewText();
-		});
-
-		$('#viewAudioButton').click(function(event) {
-			$('#storyView .toolbar a').removeClass('selected');
-			$('#viewAudioButton').addClass('selected');
-			_this.storyView.viewAudio();
-		});
-
-		$('#hamburger, #labelLogo').click(function() {
-			if (_this.menuVisible()) {
-				_this.menuOut();
-			}
-			else {
-				_this.menuIn();
-			}
-		});
-
-		$('#btnLogo').click(function() {
-			_this.setView('introView');
-		});
-
-		$('#btnLocation').click(function() {
-			_this.getLocation(_this);
-		});
-
-		$('#btnOpenMap, #btnClosePanel').click(function() {
-			_this.closeViews();
-		});
-
-		$('#btnViewServices').click(function() {
-			_this.closeViews();
-			_this.storiesList.loadData('services');
-		});
-
-		$('html').click(function(event) {
-        	this.waitforBackButton = false;
-		});
-
-		$('#menuOverlay').click(function(event) {
-        	_this.menuOut();
-		});
-
-		$('#menu').on('swipeleft', function(event) {
-        	_this.menuOut();
-		});
-
-		$('.content-panel').each(function() {
-			var contentPanel = $(this);
-			contentPanel.on('swiperight', function(event) {
-				_this.closeView(contentPanel.attr('id'));
+			$('#viewTextButton').click(function(event) {
+				$('#storyView .toolbar a').removeClass('selected');
+				$('#viewTextButton').addClass('selected');
+				_this.storyView.viewText();
 			});
-		});
 
-		if (isPhoneGap()) {
-			if (localStorage.getItem('lang') != null) {
-				setTimeout(function() {
-					$('#splash').fadeOut();
-				}, 2200);
+			$('#viewAudioButton').click(function(event) {
+				$('#storyView .toolbar a').removeClass('selected');
+				$('#viewAudioButton').addClass('selected');
+				_this.storyView.viewAudio();
+			});
+
+			$('#hamburger, #labelLogo').click(function() {
+				if (_this.menuVisible()) {
+					_this.menuOut();
+				}
+				else {
+					_this.menuIn();
+				}
+			});
+
+			$('#btnLogo').click(function() {
+				_this.setView('introView');
+			});
+
+			$('#btnLocation').click(function() {
+				_this.getLocation(_this);
+			});
+
+			$('#btnOpenMap, #btnClosePanel').click(function() {
+				_this.closeViews();
+			});
+
+			$('#btnViewServices').click(function() {
+				_this.closeViews();
+				_this.storiesList.loadData('services');
+			});
+
+			$('html').click(function(event) {
+	        	this.waitforBackButton = false;
+			});
+
+			$('#menuOverlay').click(function(event) {
+	        	_this.menuOut();
+			});
+
+			$('#menu').on('swipeleft', function(event) {
+	        	_this.menuOut();
+			});
+
+			$('.content-panel').each(function() {
+				var contentPanel = $(this);
+				contentPanel.on('swiperight', function(event) {
+					_this.closeView(contentPanel.attr('id'));
+				});
+			});
+
+			if (isPhoneGap()) {
+				if (localStorage.getItem('lang') != null) {
+					setTimeout(function() {
+						$('#splash').fadeOut();
+					}, 2200);
+				}
+				else {
+					$('#splash .lang-select a').each(function() {
+						$(this).click(function() {
+							if ($(this).attr('rel') == 'is') {
+								window.appLanguage = 'is';
+							}
+							if ($(this).attr('rel') == 'en') {
+								window.appLanguage = 'en';
+							}
+
+							localStorage.setItem('lang', window.appLanguage);
+
+							$(document.body).removeClass('lang-is');
+							$(document.body).removeClass('lang-en');
+							$(document.body).addClass('lang-'+window.appLanguage);
+
+							_this.storiesList.loadData('stories');
+
+							$('#splash').fadeOut();
+						});
+					});			
+				}			
 			}
 			else {
-				$('#splash .lang-select a').each(function() {
-					$(this).click(function() {
-						if ($(this).attr('rel') == 'is') {
-							window.appLanguage = 'is';
-						}
-						if ($(this).attr('rel') == 'en') {
-							window.appLanguage = 'en';
-						}
-
-						localStorage.setItem('lang', window.appLanguage);
-
-						$(document.body).removeClass('lang-is');
-						$(document.body).removeClass('lang-en');
-						$(document.body).addClass('lang-'+window.appLanguage);
-
-						_this.storiesList.loadData('stories');
-
-						$('#splash').fadeOut();
-					});
-				});			
-			}			
+				$('#splash').hide();
+				$(document.body).addClass('lang-is');
+				$(document.body).addClass('app-desktop');
+			}
 		}
-		else {
-			$('#splash').hide();
-			$(document.body).addClass('lang-is');
-			$(document.body).addClass('app-desktop');
-		}
+
+		_this.firstRun = false;
 	};
 
 	this.onBackButton = function(_this) {
@@ -1242,7 +1253,6 @@ var App = function() {
 
 			var storiesHtml = '';
 			stories.each(function(story) {
-				console.log(story);
 				storiesHtml += '<a class="'+(story.get('hasAudio') ? 'has-audio' : '')+'" data-place="' + placeModel.get('id') + '" data-story="' + story.get('id') + '">' + story.get('title') + '</a>';
 			});
 			popupContent += '<div class="stories">' + storiesHtml + '</div>';
@@ -1294,6 +1304,7 @@ var App = function() {
     };
 
 	this.menuIn = function() {
+		console.log('menuIn');
 		$('#legendsSubMenu').removeClass('open');
 		$('#menu').addClass('visible');
 		$('#menuOverlay').css('display', 'block');
@@ -1333,12 +1344,16 @@ var App = function() {
 			$('#msgOverlay').fadeIn();
 			messageContainer.click(function() {
 				$('#msgOverlay').fadeOut(function() {
-					$('#msgOverlay').html('');
+					renderHtml(_.bind(function() {
+						$('#msgOverlay').html('');
+					}, this));
 				});
 			});
 			_this.timerId = setTimeout(function() {
 				$('#msgOverlay').fadeOut(function() {
-					$('#msgOverlay').html('');
+					renderHtml(_.bind(function() {
+						$('#msgOverlay').html('');
+					}, this));
 				});
 				_this.timerId = -1;
 			}, 5000);
@@ -1347,7 +1362,9 @@ var App = function() {
 		if (_this.timerId != -1) {
 			clearTimeout(_this.timerId);
 			$('#msgOverlay').fadeOut(function() {
-				$('#msgOverlay').html('');
+				renderHtml(_.bind(function() {
+					$('#msgOverlay').html('');
+				}, this));
 				displayMessage();
 			});
 		}
@@ -1360,4 +1377,14 @@ var App = function() {
 function formatMinSec(t) {
 	var s = String(Math.round(t));
 	return s.length == 1 ? '0'+s: s;
+}
+
+function renderHtml(f) {
+//	if (MSApp && MSApp.execUnsafeLocalFunction) {
+	if (typeof(MSApp) != 'undefined' && MSApp.execUnsafeLocalFunction) {
+		MSApp.execUnsafeLocalFunction(f);
+	}
+	else {
+		f();
+	}
 }

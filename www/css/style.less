@@ -5,6 +5,12 @@
 
 * {
 	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;     
 }
 
 .clearfix:after {
@@ -756,7 +762,7 @@ a {
 					
 					margin: 0;
 					position: absolute;
-					top: 50%;
+					top: 25px;
 					margin-top: -9px;
 					left: 15px;
 					
@@ -855,7 +861,13 @@ a {
 	}
 	
 	.leaflet-popup-content-wrapper {
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d69f2b), color-stop(100%, #815f1c));
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d69f2b+0,815f1c+100 */
+		background: rgb(214,159,43); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(214,159,43,1) 0%, rgba(129,95,28,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(214,159,43,1) 0%,rgba(129,95,28,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(214,159,43,1) 0%,rgba(129,95,28,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d69f2b', endColorstr='#815f1c',GradientType=0 ); /* IE6-9 */
+
 		border-radius: 3px;
 		border-top: 1px solid #73694B;
 		border-left: 1px solid #73694B;
