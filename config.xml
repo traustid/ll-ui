@@ -7,9 +7,6 @@
     <author email="traustid@gmail.com" href="http://traustidagsson.com">
         Trausti Dagsson
     </author>
-
-    <preference name="phonegap-version" value="cli-6.1.0" />
-    <preference name="windows-appx-target" value="uap" />
     
     <content src="index.html" />
     
