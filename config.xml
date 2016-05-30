@@ -24,18 +24,20 @@
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 	<icon src="icon.png" />0
 
-	<icon gap:density="ldpi" gap:platform="android" gap:role="default" src="www/res/icon/android/icon-36-ldpi.png" />
-	<icon gap:density="mdpi" gap:platform="android" gap:role="default" src="www/res/icon/android/icon-48-mdpi.png" />
-	<icon gap:density="hdpi" gap:platform="android" gap:role="default" src="www/res/icon/android/icon-72-hdpi.png" />
-	<icon gap:density="xhdpi" gap:platform="android" gap:role="default" src="www/res/icon/android/icon-96-xhdpi.png" />
+	<icon gap:density="ldpi" gap:platform="android" gap:role="default" src="res/icon/android/icon-36-ldpi.png" />
+	<icon gap:density="mdpi" gap:platform="android" gap:role="default" src="res/icon/android/icon-48-mdpi.png" />
+	<icon gap:density="hdpi" gap:platform="android" gap:role="default" src="res/icon/android/icon-72-hdpi.png" />
+	<icon gap:density="xhdpi" gap:platform="android" gap:role="default" src="res/icon/android/icon-96-xhdpi.png" />
+	<icon gap:density="xxhdpi" gap:platform="android" gap:role="default" src="res/icon/android/drawable-xxhdpi-icon.png" />
+	<icon gap:density="xxxhdpi" gap:platform="android" gap:role="default" src="res/icon/android/drawable-xxxhdpi-icon.png" />
 
-	<icon gap:platform="ios" height="57" src="www/res/icon/ios/icon-57.png" width="57" />
-	<icon gap:platform="ios" height="72" src="www/res/icon/ios/icon-72.png" width="72" />
-	<icon gap:platform="ios" height="114" src="www/res/icon/ios/icon-57-2x.png" width="114" />
-	<icon gap:platform="ios" height="144" src="www/res/icon/ios/icon-72-2x.png" width="144" />
+	<icon gap:platform="ios" height="57" src="res/icon/ios/icon-57.png" width="57" />
+	<icon gap:platform="ios" height="72" src="res/icon/ios/icon-72.png" width="72" />
+	<icon gap:platform="ios" height="114" src="res/icon/ios/icon-57-2x.png" width="114" />
+	<icon gap:platform="ios" height="144" src="res/icon/ios/icon-72-2x.png" width="144" />
 
-	<icon src="www/res/icon/wp8/ApplicationIcon.png" gap:platform="winphone" />
-	<icon src="www/res/icon/wp8/Background.png" gap:platform="winphone" gap:role="background" />    
+	<icon src="res/icon/wp8/ApplicationIcon.png" gap:platform="winphone" />
+	<icon src="res/icon/wp8/Background.png" gap:platform="winphone" gap:role="background" />    
 
 	<platform name="android">
 		<icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
