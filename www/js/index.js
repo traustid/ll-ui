@@ -575,6 +575,13 @@ var MapLib = function() {
 				maxZoom: 11,
 				unloadInvisibleTiles: false
 			})
+		},
+		openStreetMap: {
+			label: 'OpenStretMap',
+			layer: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 19,
+				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+			})
 		}
 	};
 
@@ -583,6 +590,7 @@ var MapLib = function() {
 			center: this.mapCenter,
 			zoom: 11,
 			zoomControl: false,
+			maxZoom: 19,
 			attributionControl: false,
 			maxBounds: this.setBoundaries ? new L.LatLngBounds(this.maxBoundaries.southWest, this.maxBoundaries.northEast) : null
 		});
@@ -608,6 +616,34 @@ var MapLib = function() {
 				});
 			});
 		});
+
+		this.map.on('zoomend', _.bind(function() {
+			console.log(this.currentBase);
+			if (L.Browser.retina) {
+				if (this.map.getZoom() > 13) {
+					if (this.currentBase != 'openStreetMap' && this.currentBase != 'offline') {
+						console.log('zoomend: set openStreetMap');
+						this.setBaseMap('openStreetMap');
+					}
+				}
+				else if (this.currentBase != 'online_retina' && this.currentBase != 'online' && this.currentBase != 'offline') {
+					console.log('zoomend: set online_retina');
+					this.setBaseMap('online_retina');
+				}
+			}
+			else {
+				if (this.map.getZoom() > 14) {
+					if (this.currentBase != 'openStreetMap' && this.currentBase != 'offline') {
+						console.log('zoomend: set openStreetMap');
+						this.setBaseMap('openStreetMap');
+					}
+				}
+				else if (this.currentBase != 'online_retina' && this.currentBase != 'online' && this.currentBase != 'offline') {
+					console.log('zoomend: set online');
+					this.setBaseMap('online');
+				}
+			}
+		}, this));
 /*
 		L.control.attribution ({
             position: 'bottomleft'
@@ -776,12 +812,16 @@ var App = function() {
 		
 		document.addEventListener('online', function() {
 			_this.networkstatus = 'online';
-			if (L.Browser.retina) {
-				_this.mapLib.setBaseMap('online_retina');
+
+			if (_this.mapLib) {
+				if (L.Browser.retina) {
+					_this.mapLib.setBaseMap('online_retina');
+				}
+				else {
+					_this.mapLib.setBaseMap('online');
+				}
 			}
-			else {
-				_this.mapLib.setBaseMap('online');
-			}
+				
 			_this.popupMessage('<div class="heading"><span class="is">Netsamband komið á.</span><span class="en">Internet connection established.</span></div><span class="is">Hægt er að þysja inn á kortinu.</span><span class="en">You can now zoom in on the map.</span>');
 		});
 		
@@ -844,7 +884,9 @@ var App = function() {
 							});
 							_this.viewStory(_this.storiesList.get(storyId));
 						});
-						Backbone.history.start();					
+						if (_this.firstRun) {
+							Backbone.history.start();
+						}
 					}, 1000);
 				}
 
