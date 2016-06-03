@@ -29,12 +29,10 @@
     	<div id="mapContainer"></div>
 		
     	<div id="msgOverlay"></div>
-
-		<a id="hamburger"></a>
     	
     	<a id="labelLogo">Lifandi Landslag</a>
     	
-		<a id="btnLogo"></a>
+		<a id="btnLogo" class="hamburger"></a>
 
 		<a id="btnLocation"></a>
 
@@ -329,7 +327,7 @@ Staðirnir verða merktir á kortið, þú ýtir á merkið og færð upplýsing
 			<div class="content text visible">
 				<ul class="stories-list touch-list">
 				<% _.each(stories, function(item, index)  { %>
-					<li><a class="type"data-place="<%= placeId %>" data-story="<%= item.get('id') %>"><%= item.get('title') %></a></li>
+					<li><a class="type"data-place="<%= placeId %>" data-data-list="<%= dataList %>" data-story="<%= item.get('id') %>"><%= item.get('title') %></a></li>
 				<% }); %>
 				</ul>
 			</div>

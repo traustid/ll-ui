@@ -87,13 +87,47 @@ var StoriesList = Backbone.Collection.extend({
 	model: StoryInfo,
 	currentList: 'stories',
 
-	initialize: function() {
+	initializeData: function() {
+		for (var item in this.dataUrls) {
+			this.dataUrls[item].data_is = new Backbone.Collection();
+			this.dataUrls[item].data_is.url = this.dataUrls[item].is;
+			this.dataUrls[item].data_is.on('reset', this.subCollectionReset, this);
+			this.dataUrls[item].data_is.fetch({
+				reset: true
+			});
+
+			this.dataUrls[item].data_en = new Backbone.Collection();
+			this.dataUrls[item].data_en.url = this.dataUrls[item].is;
+			this.dataUrls[item].data_en.on('reset', this.subCollectionReset, this);
+			this.dataUrls[item].data_en.fetch({
+				reset: true
+			});
+		}
 	},
 
-	byPlace: function(place) {
-		filtered = this.filter(function(story) {
-			return story.get("places").indexOf(place) > -1;
-		});
+	subCollectionCount: 0,
+	subCollectionReset: function() {
+		this.subCollectionCount++;
+
+		console.log(this.subCollectionCount);
+
+		if (this.subCollectionCount == 8) {
+			this.trigger('dataLoaded');
+		}
+	},
+
+	byPlace: function(place, dataList) {
+		if (dataList) {
+			console.log('byPlace and we have the dataList variable set!');
+			filtered = _.filter(this.dataUrls[dataList]['data_'+window.appLanguage].at(0).get('data'), function(story) {
+				return story.places.indexOf(place) > -1;
+			});
+		}
+		else {		
+			filtered = this.filter(function(story) {
+				return story.get("places").indexOf(place) > -1;
+			});
+		}
 		return new StoriesList(filtered);
 	},
 
@@ -135,10 +169,7 @@ var StoriesList = Backbone.Collection.extend({
 
 	loadData: function(dataList, success) {
 		this.currentList = dataList;
-		this.url = this.dataUrls[dataList][window.appLanguage];
-		this.fetch({
-			success: success
-		});
+		this.reset(this.dataUrls[dataList]['data_'+window.appLanguage].at(0).get('data'));
 	}
 });
 
@@ -684,6 +715,7 @@ var MapLib = function() {
 				(hasAudio ? this.audioMarkerIconBlue : this.markerIconBlue) : 
 				hasAudio ? this.audioMarkerIcon : this.markerIcon
 		});
+		marker.options.dataList = this.storiesList.currentList;
 /*
 		var markerContent = '<h3>' + data.get('name') + '</h3>';
 		var stories = app.storiesList.byPlace(data.get('id'));
@@ -856,52 +888,57 @@ var App = function() {
 
 		_this.storiesList = new StoriesList();
 		_this.mapLib.storiesList = _this.storiesList;
-		_this.storiesList.on('reset', function() {
-			_this.mapCollection = new MapCollection();
-			_this.mapCollection.on('reset', function() {
-				_this.mapLib.clearMap();
-				_this.mapLib.addMarkers(_this.mapCollection, function(event, _thisMarker) {
-					_this.markerClick(_this, event, _thisMarker);
+		_this.storiesList.initializeData();
+
+		_this.storiesList.on('dataLoaded', _.bind(function() {
+
+			_this.storiesList.on('reset', function() {
+				_this.mapCollection = new MapCollection();
+				_this.mapCollection.on('reset', function() {
+					_this.mapLib.clearMap();
+					_this.mapLib.addMarkers(_this.mapCollection, function(event, _thisMarker) {
+						_this.markerClick(_this, event, _thisMarker);
+					});
+
+					if (_this.currentLocation != undefined) {
+					}
+					if (!isPhoneGap()) {
+						setTimeout(function() {
+							_this.appRouter = new AppRouter();
+							_this.appRouter.on('route:mainView', function() {
+								if (_this.currentView != 'introView') {
+									_this.closeViews();
+								}
+							});
+							_this.appRouter.on('route:placeView', function(placeId) {
+
+							});
+							_this.appRouter.on('route:storyPlaceView', function(placeId, storyId) {
+								_this.storiesList.get(storyId).set({
+									place: placeId
+								});
+								_this.viewStory(_this.storiesList.get(storyId));
+							});
+							if (_this.firstRun) {
+								Backbone.history.start();
+							}
+						}, 1000);
+					}
+
 				});
 
-				if (_this.currentLocation != undefined) {
-	//				_this.mapLib.updateMarkerRestriction(_this.currentLocation);
+				_this.placeList = new PlaceList();
+				_this.placeList.on('reset', function() {
+					_this.mapCollection.reset(_this.placeList.getPopulated().models);
+				});
+
+				if (_this.storiesList.intro != undefined) {
+					_this.viewStory(new StoryInfo(_this.storiesList.intro));
 				}
-				if (!isPhoneGap()) {
-					setTimeout(function() {
-						_this.appRouter = new AppRouter();
-						_this.appRouter.on('route:mainView', function() {
-							if (_this.currentView != 'introView') {
-								_this.closeViews();
-							}
-						});
-						_this.appRouter.on('route:placeView', function(placeId) {
-
-						});
-						_this.appRouter.on('route:storyPlaceView', function(placeId, storyId) {
-							_this.storiesList.get(storyId).set({
-								place: placeId
-							});
-							_this.viewStory(_this.storiesList.get(storyId));
-						});
-						if (_this.firstRun) {
-							Backbone.history.start();
-						}
-					}, 1000);
-				}
-
 			});
+			_this.storiesList.loadData('stories');
+		}, this));
 
-			_this.placeList = new PlaceList();
-			_this.placeList.on('reset', function() {
-				_this.mapCollection.reset(_this.placeList.getPopulated().models);
-			});
-
-			if (_this.storiesList.intro != undefined) {
-				_this.viewStory(new StoryInfo(_this.storiesList.intro));
-			}
-		});
-		_this.storiesList.loadData('stories');
 
 		if (_this.firstRun) {
 			_this.soundManager = new SoundManager();
@@ -1120,7 +1157,7 @@ var App = function() {
 				_this.storyView.viewAudio();
 			});
 
-			$('#hamburger, #labelLogo').click(function() {
+			$('#btnLogo, #labelLogo').click(function() {
 				if (_this.menuVisible()) {
 					_this.menuOut();
 				}
@@ -1128,11 +1165,11 @@ var App = function() {
 					_this.menuIn();
 				}
 			});
-
+/*
 			$('#btnLogo').click(function() {
 				_this.setView('introView');
 			});
-
+*/
 			$('#btnLocation').click(function() {
 				_this.getLocation(_this);
 			});
@@ -1154,7 +1191,7 @@ var App = function() {
 	        	_this.menuOut();
 			});
 
-			$('#menu').on('swipeleft', function(event) {
+			$('#menu').on('swiperight', function(event) {
 	        	_this.menuOut();
 			});
 
@@ -1270,7 +1307,9 @@ var App = function() {
 			}
 		}
 */
-		if (this.storiesList.currentList == 'services' || this.storiesList.currentList == 'hiking') {
+		var dataList = event.target.options.dataList;
+
+		if (dataList == 'services' || dataList == 'hiking') {
 			var markerId = event.target.options.id;
 			this.viewStory(this.storiesList.byPlace(markerId).at(0));
 		}
@@ -1279,7 +1318,8 @@ var App = function() {
 			this.placeView.model.set({
 				placeName: this.placeList.get(markerId).get('name'),
 				placeId: markerId,
-				stories: this.storiesList.byPlace(markerId).models
+				stories: this.storiesList.byPlace(markerId).models,
+				dataList: dataList
 			});
 			this.setView('placeView');
 
@@ -1291,12 +1331,12 @@ var App = function() {
 			var markerId = event.target.options.id;
 			var placeModel = this.placeList.get(markerId);
 			var popupContent = '<h3>' + placeModel.get('name') + '</h3>';
-			var stories = this.storiesList.byPlace(placeModel.get('id'));
+			var stories = this.storiesList.byPlace(placeModel.get('id'), dataList);
 
 			var storiesHtml = '';
-			stories.each(function(story) {
-				storiesHtml += '<a class="'+(story.get('hasAudio') ? 'has-audio' : '')+'" data-place="' + placeModel.get('id') + '" data-story="' + story.get('id') + '">' + story.get('title') + '</a>';
-			});
+			stories.each(_.bind(function(story) {
+				storiesHtml += '<a class="'+(story.get('hasAudio') ? 'has-audio' : '')+'" data-data-list="'+dataList+'" data-place="' + placeModel.get('id') + '" data-story="' + story.get('id') + '">' + story.get('title') + '</a>';
+			}, this));
 			popupContent += '<div class="stories">' + storiesHtml + '</div>';
 
 			_this.mapLib.map.openPopup(popupContent, _thisMarker.getLatLng(), {
