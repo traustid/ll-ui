@@ -1,0 +1,2169 @@
+[
+	{
+		"id": "stories",
+
+		"data":[
+			{
+				"id":"1",
+				"title":"Sigurlaug að Ketu og draugurinn",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa.Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 226-229.",
+				"type":"1",
+				"places":[1],
+				"image":"data/images/21.jpg"
+			},
+			
+			{
+				"id":"2",
+				"title":"Grímsborg",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 27; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 27.MS: Lbs 532,265;53",
+				"type":"2",
+				"places":[1],
+				"image":"data/images/5.jpg"
+			},
+			
+			{
+				"id":"4",
+				"title":"Þorbjörn Kólka",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), II, 129-131. MS: Lbs 1440,340.",
+				"type":"8",
+				"places":[3],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"6",
+				"title":"Jólanótt í Kasthvammi",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 169-170. MS: Lbs 537,238. ",
+				"type":"2",
+				"places":[5, 100, 106],
+				"hasAudio": "true",
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"7",
+				"title":"Hvalurð undir Tindastól",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), II, 44-45. MS: Lbs 532,261.",
+				"type":"8",
+				"places":[5, 101, 107],
+				"hasAudio": "true",
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"8",
+				"title":"Huldufólk í Vökuhól",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 28-29. ",
+				"type":"2",
+				"places":[6, 102, 108],
+				"hasAudio": "true",
+				"image":"data/images/1.jpg"
+			},
+			
+			{
+				"id":"10",
+				"title":"Magnús Sigurðsson og vofan ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 208-209.",
+				"type":"1",
+				"places":[8]
+			},
+			
+			{
+				"id":"13",
+				"title":"Þorgeirsboli, frh.",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 383-396.",
+				"type":"1",
+				"places":[11, 103, 109],
+				"hasAudio": "true",
+				"image":"data/images/10.jpg"
+			},
+			
+			{
+				"id":"14",
+				"title":"Hrólfur Huglausi",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 166-176.",
+				"type":"2",
+				"places":[12],
+				"image":"data/images/2.jpg"
+			},
+			
+			{
+				"id":"15",
+				"title":"Tröllin í Tindastól",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 535. MS: Lbs 534,94. ",
+				"type":"8",
+				"places":[12],
+				"hasAudio": "true",
+				"image":"data/images/2.jpg"
+			},
+			
+			{
+				"id":"17",
+				"title":"Reykja-kisa",
+				"source":"Oddur Björnsson, Þjóðtrú og þjóðsagnir. Rits. Jónas Jónasson. 2.útgáfa, aukin. Rits. Steindór Steindórsson (Akureyri: BókaforlagOdds Björnssonar, 1977), 202-203.",
+				"type":"1",
+				"places":[14, 104, 110],
+				"hasAudio": "true",
+				"image":"data/images/9.jpg"
+			},
+			
+			{
+				"id":"19",
+				"title":"Jón á Sauðá",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 252-254.",
+				"type":"7",
+				"places":[14, 105],
+				"hasAudio": "true",
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"21",
+				"title":"Huldukonan í Grásteini ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 76-77.",
+				"type":"2",
+				"places":[16],
+				"hasAudio": "true",
+				"image":"data/images/23.jpg"
+			},
+					
+			{
+				"id":"23",
+				"title":"Útilegumenn í Staðarfjöllum ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 257.",
+				"type":"7",
+				"places":[18],
+				"hasAudio": "true",
+				"image":"data/images/23.jpg"
+			},
+			
+			{
+				"id":"24",
+				"title":"Reynisstaðabræður",
+				"source":"Jón Árnason,Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig: J. C.Hinrichs, 1862-1864), I, 347. Jón Árnason, Íslenzkar þjóðsögurog ævintýri. 6 bindi. Rits. Árni Böðvarsson og BjarniVilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 333-334. MS:Lbs 528,2",
+				"type":"8",
+				"places":[18]
+			},
+			
+			{
+				"id":"25",
+				"title":"Keflavíkur Sigurður",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), II 202-207.",
+				"type":"´8",
+				"places":[58,98],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"26",
+				"title":"Þiðrik Þiðriksson ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), II 12-14",
+				"type":"1",
+				"places":[19]
+			},
+			
+			{
+				"id":"27",
+				"title":"Jón Skarði",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 325-328.",
+				"type":"1",
+				"places":[20],
+				"hasAudio": "true",
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"28",
+				"title":"Boli og fylgdarmenn Guðleifar",
+				"source":"Sigurður Nordal og Þórbergur Þórðarson, Gráskinna hin meiri. 2 bindi.(Reykjavík: Bókaútgáfan Þjóðsaga, 1962), II, 310-315.",
+				"type":"1",
+				"places":[21],
+				"image":"data/images/10.jpg"
+			},
+			
+			{
+				"id":"29",
+				"title":"Galdrahólmi",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), II 283.",
+				"type":"3",
+				"places":[22]
+			},
+			
+			{
+				"id":"30",
+				"title":"Hjónadjöfullinn",
+				"source":"Jón Árnason,Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig: J. C.Hinrichs, 1862-1864), I, 347. Jón Árnason, Íslenzkar þjóðsögurog ævintýri. 6 bindi. Rits. Árni Böðvarsson og BjarniVilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 333-334. MS:Lbs 528,2",
+				"type":"1",
+				"places":[23],
+				"hasAudio": "true",
+				"image":"data/images/26.jpg"
+			},
+			
+			{
+				"id":"31",
+				"title":"Vatnsskarðsskrímslið",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 18.",
+				"type":"8",
+				"places":[24],
+				"hasAudio": "true",
+				"image":"data/images/25.jpg"
+			},
+			
+			{
+				"id":"32",
+				"title":"Frá Eyjólfi og Álfkonu",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 82-83. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,80-81. MS: Lbs 1293",
+				"type":"2",
+				"places":[25]
+			},
+			
+			{
+				"id":"33",
+				"title":"Tómasarsaga",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), II, 166-167; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), II,167-168. MS: Lb",
+				"type":"7",
+				"places":[25],
+				"hasAudio": "true",
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"34",
+				"title":"Jón Goddi",
+				"source":"Torfhildur Þorsteinsdóttir Hólm, Þjóðsögur og sagnir. (Reykjavík:Almenna bókafélagið, 1962), 115-118.",
+				"type":"1",
+				"places":[26],
+				"hasAudio": "true",
+				"image":"data/images/5.jpg"
+			},
+			
+			{
+				"id":"35",
+				"title":"Skúli Fógeti",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 146-147.",
+				"type":"8",
+				"places":[27],
+				"hasAudio": "true",
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"36",
+				"title":"Sagan af Helgu frá Miklabæ ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 49-53.",
+				"type":"1",
+				"places":[28],
+				"image":"data/images/21.jpg"
+			},
+			
+			{
+				"id":"37",
+				"title":"Um Odd prest í Miklabæ",
+				"source":"Torfhildur Þorsteinsdóttir Hólm, Þjóðsögur og sagnir. (Reykjavík:Almenna bókafélagið, 1962), 92-94.",
+				"type":"1",
+				"places":[28],
+				"image":"data/images/22.jpg"
+			},
+			
+			{
+				"id":"39",
+				"title":"Galdramenn á Vorum dögum",
+				"source":"Huld,rits. Hannes Þorsteinsson, Jón Þorkelsson, Ólafur Davíðsson,Pálmi Pálsson og Valdimar Ásmundsson, önnur útgáfa (Reykjavík:Sæbjörn Jónsson, 1935-36; fyrsta útgáfa: 1890-98), II, 205-208.",
+				"type":"8",
+				"places":[30],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"40",
+				"title":"Smalinn á Silfrúnarstöðum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 200-203. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,190-192. MS: Lbs ",
+				"type":"2",
+				"places":[31],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"41",
+				"title":"Sagan af Glímu Birni ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 311-317.",
+				"type":"8",
+				"places":[31],
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"42",
+				"title":"Þáttur af Grími Skeljungsbana",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 247-256. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,238-247. MS: Lbs ",
+				"type":"8",
+				"places":[31],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"43",
+				"title":"Símon Dalaskáld ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 150-151.",
+				"type":"8",
+				"places":[32, 31],
+				"hasAudio": "true",
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"44",
+				"title":"Ferð Jóns blinda yfir Öxnadalsheiði",
+				"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), IV, 292-297.",
+				"type":"1",
+				"places":[33]
+			},
+			
+			{
+				"id":"46",
+				"title":"Ormur í Krákugerði",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), II 91-93.",
+				"type":"8",
+				"places":[34],
+				"image":"data/images/16.jpg"
+			},
+			
+			{
+				"id":"47",
+				"title":"Reimleiki í Hálfdánartungum",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 337-339.",
+				"type":"1",
+				"places":[34]
+			},
+			
+			{
+				"id":"48",
+				"title":"Útilegumannsögur: Ýmislegt varðandi útilegumenn: Móhosótti hundurinn",
+				"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), III, 116-119.",
+				"type":"8",
+				"places":[35],
+				"image":"data/images/16.jpg"
+			},
+			
+			{
+				"id":"49",
+				"title":"Frá Ábæjarskottu: Skotta tekur hvolp í fóstur",
+				"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), IV, 360-361.",
+				"type":"1",
+				"places":[36],
+				"image":"data/images/20.jpg"
+			},
+			
+			{
+				"id":"51",
+				"title":"Konu dreymir huldufólk",
+				"source":"",
+				"type":"2",
+				"places":[38]
+			},
+			
+			{
+				"id":"52",
+				"title":"Frá Ábæjarskottu, dauði Páls á Keldulandi",
+				"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), IV, 358.",
+				"type":"1",
+				"places":[39]
+			},
+			
+			{
+				"id":"53",
+				"title":"Fáðu steit Grákolla",
+				"source":"Ólafur Davíðsson III (1979), 257-259",
+				"type":"8",
+				"places":[39]
+			},
+			
+			{
+				"id":"54",
+				"title":"Sigríður á Skatastöðum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 392. MS: Lbs 420,464.",
+				"type":"7",
+				"places":[40],
+				"image":"data/images/24.jpg"
+			},
+			
+			{
+				"id":"55",
+				"title":"Ábæjar eða Nýjabæjarskotta",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 374-375. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,360-361. MS: Lbs ",
+				"type":"1",
+				"places":[41],
+				"image":"data/images/20.jpg"
+			},
+			
+			{
+				"id":"56",
+				"title":"Svanhildur sem ána saug",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 27",
+				"type":"8",
+				"places":[42]
+			},
+			
+			{
+				"id":"57",
+				"title":"Fiðlu Björn",
+				"source":"Ólafur Davíðsson,Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M.Jónsson bjó til prentunar. (Reykjavík: Bókaútgáfan Þjóðsaga,1978-1980), I 11-12.",
+				"type":"2",
+				"places":[43],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"58",
+				"title":"Úlfsvatn",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), II, 162-164; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), II,164-166. MS: Lb",
+				"type":"8",
+				"places":[44]
+			},
+			
+			{
+				"id":"59",
+				"title":"Mælifellsskjóni",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 38-41. MS: Lbs 528,245.  ",
+				"type":"1",
+				"places":[45],
+				"image":"data/images/11.jpg"
+			},
+			
+			{
+				"id":"60",
+				"title":"Tómas á Nautabúi",
+				"source":"Þorsteinn M. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), III, 294.",
+				"type":"8",
+				"places":[45],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"61",
+				"title":"Jón Teitsson á Hafgrímsstöðum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), II, 138-146; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), II,139-146. MS: Lb",
+				"type":"8",
+				"places":[46],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"66",
+				"title":"Þórálfur útilegumaður",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 392-393. MS: Lbs 540, 12.kver, 19.",
+				"type":"7",
+				"places":[48],
+				"image":"data/images/16.jpg"
+			},
+			
+			{
+				"id":"68",
+				"title":"Gálgagil",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 213-214.",
+				"type":"8",
+				"places":[50],
+				"image":"data/images/16.jpg",
+				"hasAudio":"true"
+			},
+			
+			{
+				"id":"69",
+				"title":"Berghildur álfkona",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 98-104.",
+				"type":"2",
+				"places":[51],
+				"image":"data/images/1.jpg"
+			},
+			
+			{
+				"id":"71",
+				"title":"Dauði Jóhannesar í Hofstaðarseli",
+				"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), IV, 273-176.",
+				"type":"1",
+				"places":[53],
+				"hasAudio": "true",
+				"image":"data/images/5.jpg"
+			},
+			
+			{
+				"id":"72",
+				"title":"Lóns-Móri",
+				"source":"Sigurður Nordal og Þórbergur Þórðarson, Gráskinna hin meiri. 2 bindi.(Reykjavík: Bókaútgáfan Þjóðsaga, 1962), II, 54-56.",
+				"type":"8",
+				"places":[54],
+				"image":"data/images/3.jpg"
+			},
+					
+			{
+				"id":"74",
+				"title":"Hringvers Skotta",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), II 39.",
+				"type":"1",
+				"places":[56]
+			},
+			
+			{
+				"id":"76",
+				"title":"Gunnar og Draugurinn",
+				"source":"",
+				"type":"1",
+				"places":[58],
+				"hasAudio": "true",
+				"image":"data/images/1.jpg"
+			},
+			
+			{
+				"id":"78",
+				"title":"Álfkonan í Garði",
+				"source":"Oddur Björnsson . Þjóðtrú og þjóðsagnir. Rits. Jónas Jónasson(Akureyri: Bókaforlag Odds Björnssonar, 1908), 126-127;",
+				"type":"2",
+				"places":[59],
+				"hasAudio": "true",
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"79",
+				"title":"Hlöðukálfurinn í Hróarsdal",
+				"source":"Sigurður Nordal og Þórbergur Þórðarson, Gráskinna hin meiri. 2 bindi.(Reykjavík: Bókaútgáfan Þjóðsaga, 1962), II, 50-51",
+				"type":"8",
+				"places":[60],
+				"hasAudio": "true",
+				"image":"data/images/10.jpg"
+			},
+					
+			{
+				"id":"82",
+				"title":"Saga Erlends Árnasonar",
+				"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), I, 48-59.",
+				"type":"8",
+				"places":[63],
+				"image":"data/images/4.jpg"
+			},
+
+			{
+				"id":"86",
+				"title":"Ingibjörg í Kalmanstungu",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), II 403-407.",
+				"type":"8",
+				"places":[67],
+				"image":"data/images/24.jpg"
+			},
+			
+			{
+				"id":"88",
+				"title":"Sagan af Helga Karlssyni og biskupsdótturinni frá Hólum",
+				"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), V, 198-205.",
+				"type":"8",
+				"places":[68],
+				"image":"data/images/2.jpg"
+			},
+			
+			{
+				"id":"89",
+				"title":"Séra Þorleifur Skaftason ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 119-127.",
+				"type":"8",
+				"places":[68],
+				"image":"data/images/26.jpg"
+			},
+			
+			{
+				"id":"90",
+				"title":"Sigurður prestson og bræður hans",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 613-619. MS: Lbs 417,605. ",
+				"type":"8",
+				"places":[24],
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"91",
+				"title":"Galdra Loftur ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), II 196-199.",
+				"type":"8",
+				"places":[68],
+				"image":"data/images/9.jpg"
+			},
+					
+			{
+				"id":"93",
+				"title":"Sögur um séra Þorkel Guðbrandsson ",
+				"source":"Huld,rits. Hannes Þorsteinsson, Jón Þorkelsson, Ólafur Davíðsson,Pálmi Pálsson og Valdimar Ásmundsson, önnur útgáfa (Reykjavík:Sæbjörn Jónsson, 1935-36; fyrsta útgáfa: 1890-98), II, 19-32.",
+				"type":"8",
+				"places":[68]
+			},
+			
+			{
+				"id":"96",
+				"title":"Sagan af Hóla Steini ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 295-299.",
+				"type":"8",
+				"places":[68],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"97",
+				"title":"Biskupsdóttirin á Hólum",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), III, 301-305.",
+				"type":"8",
+				"places":[68],
+				"image":"data/images/24.jpg"
+			},
+			
+			{
+				"id":"99",
+				"title":"Beinagrindin á hólum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 359-360. MS: Lbs 537,33. ",
+				"type":"8",
+				"places":[68],
+				"image":"data/images/22.jpg",
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"100",
+				"title":"Tólf skólapiltar á Hólum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 390-391. MS: Lbs 420,175. ",
+				"type":"8",
+				"places":[68],
+				"hasAudio": "true",
+				"image":"data/images/9.jpg"
+			},
+			
+			{
+				"id":"102",
+				"title":"Álfakaupmaðurinn",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 446. MS: Lbs 538, 8. kver, 9,7,14,8.",
+				"type":"2",
+				"places":[69],
+				"image":"data/images/3.jpg"
+			},
+					
+			{
+				"id":"105",
+				"title":"Þórður á Þrastarstöðum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 9-11; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,11-12. MS: Lbs 422, ",
+				"type":"2",
+				"places":[72],
+				"hasAudio": "true",
+				"image":"data/images/5.jpg"
+			},
+			
+			{
+				"id":"106",
+				"title":"Rifsdraugurinn",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 346. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,332-333. MS: Lbs 415,",
+				"type":"1",
+				"places":[72],
+				"hasAudio": "true",
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"107",
+				"title":"Óvætturinn við Urriðalæk ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 145.",
+				"type":"8",
+				"places":[73]
+			},
+					
+			{
+				"id":"110",
+				"title":"Séra Hálfdán á Felli: Glæsibær ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), II 166.",
+				"type":"8",
+				"places":[76]
+			},
+			
+			{
+				"id":"111",
+				"title":"Fiskveiðin",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 537. MS: Lbs 417,537",
+				"type":"8",
+				"places":[76],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"112",
+				"title":"Nykur í Knappastaðalæk",
+				"source":"Oddur Björnsson. Þjóðtrú og þjóðsagnir. Rits. Jónas Jónasson(Akureyri: Bókaforlag Odds Björnssonar, 1908), 203-205; ",
+				"type":"8",
+				"places":[77],
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"114",
+				"title":"Kálfur og Kölski",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 495. MS: Lbs 417,576",
+				"type":"3",
+				"places":[79],
+				"image":"data/images/12.jpg",
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"116",
+				"title":"Kölski sækir vatn í meisum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 536. MS: Lbs Allrah. nr. 76,77. ",
+				"type":"3",
+				"places":[79],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"117",
+				"title":"Söfnuður séra Hálfdánar",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 536. MS: Lbs Allrah. nr. 76,77. ",
+				"type":"3",
+				"places":[79],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"118",
+				"title":"Kölski ber á völl fyrir Hálfdán",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 515. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 500.MS: Lbs 530,64.",
+				"type":"3",
+				"places":[79],
+				"image":"data/images/12.jpg",
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"119",
+				"title":"Helga Prestsdóttir",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 107-110. MS: Lbs 417,537. ",
+				"type":"2",
+				"places":[79],
+				"image":"data/images/20.jpg"
+			},
+			
+			{
+				"id":"120",
+				"title":"Féndur í skreiðarferð",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 530. MS: Lbs 417,537. ",
+				"type":"3",
+				"places":[79],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"121",
+				"title":"Guðmundur á Keldum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 132-133. MS: Lbs Allrah. nr. 202. ",
+				"type":"2",
+				"places":[80],
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"122",
+				"title":"Bakkabræður",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 383. MS: Lbs.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"123",
+				"title":"Bakkabræður: Andlát föður þeirra",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 384. MS: Lbs Allrah. nr. 238-248.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"124",
+				"title":"Bakkabræður: Jarðaför föður þeirra",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 384. MS: Lbs Allrah. nr. 238-248",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"125",
+				"title":"Bakkabræður: Altarisgangan",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 385. MS: Lbs Allrah. nr. 238-248.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"126",
+				"title":"Bakkabræður: Gistingin á Hólum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 385. MS: Lbs Allrah. nr. 238-248.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"127",
+				"title":"Bakkabræður: Hún mun vitja gormanna",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 386. MS: Lbs.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"128",
+				"title":"Bakkabræður: Ævilok Brúnku",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 386. MS: Lbs.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"129",
+				"title":"Bakkabræður: Enginn þekkti sína fætur",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 386. MS: Lbs Allrah. nr. 238-248.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"130",
+				"title":"Bakkabræður: Húsbyggingin",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 386. MS: Lbs Allrah. nr. 238-248.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"131",
+				"title":"Bakkabræður: Ekki er kyn þó kjaraldið leki",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 386. MS: Lbs Allrah. nr. 238-248.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"132",
+				"title":"Bakkabræður: Andlát fyrsta bróðurins",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 384. MS: Lbs Allrah. nr. 238-248.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"133",
+				"title":"Bakkabræður: Andlát annars bróðursins",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), V, 385. MS: Lbs Allrah. nr. 238-248.",
+				"type":"8",
+				"places":[81],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"134",
+				"title":"Fylgja Jóns Pálssonar",
+				"source":"Oddur Björnsson, Þjóðtrú og þjóðsagnir. Rits. Jónas Jónasson. 2.útgáfa, aukin. Rits. Steindór Steindórsson (Akureyri: BókaforlagOdds Björnssonar, 1977), 161-162.",
+				"type":"8",
+				"places":[82],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"135",
+				"title":"Blákápa á Barði",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 117. MS: Lbs 238.",
+				"type":"8",
+				"places":[82],
+				"image":"data/images/17.jpg"
+			},
+			
+			{
+				"id":"136",
+				"title":"Kirkjugarðurinn á Barði",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 136-137. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,130-131. MS: Lbs ",
+				"type":"8",
+				"places":[82],
+				"hasAudio": "true",
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"137",
+				"title":"„Gleðidagur, Gulldagur“",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 50. MS: Lbs 536 A, 62.",
+				"type":"8",
+				"places":[82],
+				"image":"data/images/14.jpg"
+			},
+			
+			{
+				"id":"138",
+				"title":"Blákápuþúfa",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 117-118. MS: Lbs 538,8. kver, 19.",
+				"type":"8",
+				"places":[83]
+			},
+			
+			{
+				"id":"139",
+				"title":"Fuglar á Skeiðsdalavatni",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 116. MS: Lbs Allrah. nr. 182.",
+				"type":"8",
+				"places":[84]
+			},
+			
+			{
+				"id":"140",
+				"title":"Þorvarður prestur í Felli og Erlendur í Haganesi",
+				"source":"Jón Árnason,Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig: J. C.Hinrichs, 1862-1864), I, 258-259 Jón Árnason, Íslenzkar þjóðsögurog ævintýri. 6 bindi. Rits. Árni Böðvarsson og BjarniVilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 249-250. MS:Lbs 53",
+				"type":"1",
+				"places":[85],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"144",
+				"title":"Barnsvaggan á Minniþverá",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 44-45; Jón Árnason, Íslenzkarþjóðsögur og æfintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 44.MS: Lbs 531,4",
+				"type":"2",
+				"places":[88],
+				"image":"data/images/1.jpg"
+			},
+					
+			{
+				"id":"146",
+				"title":"Tröllin í potti",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 233. MS: Lbs Allrah. nr.177.",
+				"type":"8",
+				"places":[89],
+				"image":"data/images/13.jpg"
+			},
+			
+			{
+				"id":"148",
+				"title":"Bjarni frá Nolli ",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 366.",
+				"type":"8",
+				"places":[90],
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"151",
+				"title":"Gautur og Þorgautur ",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 116-117. MS: Lbs Allrah. nr. 181.",
+				"type":"8",
+				"places":[92, 97],
+				"image":"data/images/25.jpg"
+			},
+			
+			{
+				"id":"152",
+				"title":"Kóngshöll á Tungudal",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 80-81. MS: Lbs Allrah. nr. 317. ",
+				"type":"2",
+				"places":[93],
+				"image":"data/images/4.jpg"
+			},
+			
+			{
+				"id":"153",
+				"title":"Þórður á Þrastarstöðum",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 9-11; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,11-12. MS: Lbs 422, ",
+				"type":"2",
+				"places":[94]
+			},
+			
+			{
+				"id":"154",
+				"title":"Skráargras",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), IV, 21. MS: Lbs Allrah. nr. 262.",
+				"type":"8",
+				"places":[94],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"155",
+				"title":"Málmey",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 533. MS: Lbs 531,239. ",
+				"type":"8",
+				"places":[95]
+			},
+			
+			{
+				"id":"156",
+				"title":"Málmeyjarkonan",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 516-518. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,501-502. MS: Lbs ",
+				"type":"8",
+				"places":[95],
+				"image":"data/images/25.jpg"
+			},
+			
+			{
+				"id":"157",
+				"title":"Upptök Drangeyjar",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 280. MS: Lbs Allrah. nr. 204. ",
+				"type":"8",
+				"places":[96],
+				"image":"data/images/16.jpg",
+				"hasAudio":"true"
+			},
+			
+			{
+				"id":"159",
+				"title":"Vígð Drangey",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 144-146. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,138-140. MS: Lbs ",
+				"type":"8",
+				"places":[96],
+				"image":"data/images/12.jpg"
+			},
+			
+			{
+				"id":"160",
+				"title":"Álfarnir í Drangey",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 183-184. MS: Lbs 417,581. ",
+				"type":"2",
+				"places":[96],
+				"image":"data/images/3.jpg"
+			},
+			
+			{
+				"id":"260",
+				"title":"Silfurkrossinn",
+				"source":"Byggðasaga Skagafjarðar, III bindi. Mælifell. Hjalti Pálsson. Sögufélag Skagafjarðar. Sauðárkrókur: 2004",
+				"type":"2",
+				"places":[45],
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"261",
+				"title":"Miklabæjar Sólveig jarðsett",
+				"source":"",
+				"type":"1",
+				"places":[119],
+				"image":"data/images/20.jpg",
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"262",
+				"title":"Skinnpilsa",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa.  Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: Bókaútgáfan Þjóðsaga, 1978-1980), I 355-357.",
+				"type":"1",
+				"places":[118],
+				"image":"data/images/19.jpg",
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"263",
+				"title":"Frá Þorbjörgu landnámskonu",
+				"source":"Byggðasaga Skagafjarðar, I bindi. Þorbjargarstaðir. Hjalti Pálsson. Sögufélag Skagafjarðar. Sauðárkrókur: 1999",
+				"type":"8",
+				"places":[149],
+				"image":"data/images/1.jpg",
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"264",
+				"title":"Samningar við huldufólk",
+				"source":"Skagfirðingabók, 25 bindi. Valdimar Tr. Hafstein. Huldufólkið og hefndir Grímu: vegagerð í Hegranesi 1978. Sögufélag Skagafjarðar. Sauðárkrókur: 1997.",
+				"type":"2",
+				"places":[150],
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"265",
+				"title":"Skinþúfa",
+				"source":"Byggðasaga Skagafjarðar, II bindi. Vallanes. Hjalti Pálsson. Sögufélag Skagafjarðar. Sauðárkrókur: 2001.",
+				"type":"8",
+				"places":[151],
+				"image":"data/images/22.jpg",
+				"hasAudio": "true"
+			}
+		]
+	},
+	{
+		"id": "stories_en",
+
+		"data":[
+			{
+				"id":"183",
+				"title":"Miklabæjar Sólveig",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig: J. C. Hinrichs, 1862-1864), I, 295-298. Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 284-286. MS: Lbs 531,381,462,469.",
+				"type":"1",
+				"places":[28],
+				"hasAudio": "true"
+			},
+			{
+				"id":"184",
+				"title":"The shepherd from Silfrúnarstaðir",
+				"source":"",
+				"type":"2",
+				"places":[31],
+				"hasAudio": "true"
+				
+			},
+			{
+				"id":"185",
+				"title":"Galdra Loftur – Loftur the sorcerer",
+				"source":"",
+				"type":"8",
+				"places":[68],
+				"hasAudio": "true"
+				
+			},
+			{
+				"id":"186",
+				"title":"The Whalescree by Mt. Tindastóll",
+				"source":"",
+				"type":"8",
+				"places":[5]
+				
+			},
+			{
+				"id":"187",
+				"title":"On Christmas night in Kasthvammur",
+				"source":"",
+				"type":"2",
+				"places":[5],
+				"hasAudio": "true"
+				
+			},
+			{
+				"id":"188",
+				"title":"Móðar in Móðarsfell",
+				"source":"",
+				"type":"2",
+				"places":[111],
+				"hasAudio": "true"
+				
+			},
+			{
+				"id":"189",
+				"title":"Outlaws in Staðarfjöll",
+				"source":"",
+				"type":"8",
+				"places":[18]
+				
+			},
+			{
+				"id":"190",
+				"title":"The Cradle in Minniþverá",
+				"source":"",
+				"type":"2",
+				"places":[88],
+				"hasAudio": "true"
+				
+			},
+			{
+				"id":"191",
+				"title":"Grímsborg",
+				"source":"",
+				"type":"2",
+				"places":[1],
+				"hasAudio": "true"
+				
+			},
+			{
+				"id":"192",
+				"title":"The hidden woman in Grásteinn",
+				"source":"",
+				"type":"2",
+				"places":[16],
+				"hasAudio": "true"
+			},
+			{
+				"id":"193",
+				"title":"The Origin of Drangey",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits.Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga,1954-1961), III, 280. MS: Lbs Allrah. nr. 204. ",
+				"type":"8",
+				"places":[96],
+				"hasAudio": "true"
+			},
+			{
+				"id":"194",
+				"title":"The Curchyard in Barð",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 136-137. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,130-131. MS: Lbs ",
+				"type":"8",
+				"places":[82],
+				"hasAudio": "true"			
+			},
+			{
+				"id":"195",
+				"title":"The cat from Reykir",
+				"source":"Oddur Björnsson, Þjóðtrú og þjóðsagnir. Rits. Jónas Jónasson. 2.útgáfa, aukin. Rits. Steindór Steindórsson (Akureyri: BókaforlagOdds Björnssonar, 1977), 202-203.",
+				"type":"1",
+				"places":[14],
+				"hasAudio": "true"
+				
+			},
+			{
+				"id":"196",
+				"title":"The Ghost from Ábær or Nýibær",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 374-375. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,360-361. MS: Lbs ",
+				"type":"1",
+				"places":[41]
+			},
+			{
+				"id":"197",
+				"title":"The hidden woman from Garður",
+				"source":"Oddur Björnsson . Þjóðtrú og þjóðsagnir. Rits. Jónas Jónasson(Akureyri: Bókaforlag Odds Björnssonar, 1908), 126-127;",
+				"type":"2",
+				"places":[59]
+			},
+			{
+				"id":"198",
+				"title":"Jón “the breach”",
+				"source":"Ólafur Davíðsson, Íslenzkar þjóðsögur. 4 bindi. 3. útgáfa. Þorsteinn M. Jónsson bjó til prentunar. (Reykjavík: BókaútgáfanÞjóðsaga, 1978-1980), I 325-328.",
+				"type":"1",
+				"places":[20]
+			},
+			{
+				"id":"199",
+				"title":"Úlfsvatn",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), II, 162-164; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), II,164-166. MS: Lb",
+				"type":"8",
+				"places":[44]
+			},
+			{
+				"id":"200",
+				"title":"Þórður in Þrastarstaðir",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 9-11; Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,11-12. MS: Lbs 422, ",
+				"type":"2",
+				"places":[72]
+			},
+			{
+				"id":"201",
+				"title":"The ghost from Rif",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 346. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I,332-333. MS: Lbs 415,",
+				"type":"1",
+				"places":[72],
+				"hasAudio": "true"
+			},
+			{
+				"id":"202",
+				"title":"Tómas in Nautabú",
+				"source":"ÞorsteinnM. Jónsson, Gríma hin nýja. 10 bindi (Reykjavík, BókaútgáfanÞjóðsaga,1964-1965), III, 294.",
+				"type":"8",
+				"places":[45],
+				"hasAudio": "true"
+			},
+			{
+				"id":"203",
+				"title":"The devil fertilizes the fields for reverend Hálfdán",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig:J. C. Hinrichs, 1862-1864), I, 515. Jón Árnason, Íslenzkarþjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson ogBjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 500.MS: Lbs 530,64.",
+				"type":"8",
+				"places":[79]
+			},
+			{
+				"id":"204",
+				"title":"Skinnpilsa",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig: J. C. Hinrichs, 1862-1864), I, 376-367. Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 362-363. MS: Lbs 416,292.",
+				"type":"1",
+				"places":[118],
+				"hasAudio": "true"
+			},
+			{
+				"id":"205",
+				"title":"Miklabæjar Sólveig",
+				"source":"Jón Árnason, Íslenzkar þjóðsögur og æfintýri. 2 bindi (Leipzig: J. C. Hinrichs, 1862-1864), I, 295-298. Jón Árnason, Íslenzkar þjóðsögur og ævintýri. 6 bindi. Rits. Árni Böðvarsson og Bjarni Vilhjálmsson. (Reykjavík: Þjóðsaga, 1954-1961), I, 284-286. MS: Lbs 531,381,462,469.",
+				"type":"1",
+				"places":[119]
+			}
+		]	
+	},
+	{
+		"id": "sturlunga",
+
+		"intro":{
+			"id":"266",
+			"title":"Velkomin á Sturlungaslóð",
+			"source":"",
+			"hasAudio": "true"
+		},
+
+		"data":[
+			{
+				"id":"162",
+				"title":"Sturlunga: Hegranesþing",
+				"source":"",
+				"places":[62],
+				"hasAudio": "true"
+			},
+			{
+				"id":"234",
+				"title":"Sturlunga: Tóftabrotin",
+				"source":"",
+				"places":[62],
+				"hasAudio": "true"
+			},
+
+
+			{
+				"id":"163",
+				"title":"Sturlunga: Víðimýri",
+				"source":"",
+				"places":[111],
+				"hasAudio": "true"
+			},
+
+
+
+			{
+				"id":"164",
+				"title":"Sturlunga: Hólar",
+				"source":"",
+				"places":[68],
+				"hasAudio": "true"
+			},
+			{
+				"id":"236",
+				"title":"Sturlunga: Guðmundur góði Arason",
+				"source":"",
+				"places":[68],
+				"hasAudio": "true"
+			},
+			{
+				"id":"237",
+				"title":"Sturlunga: Biskupsstóll og biskupar",
+				"source":"",
+				"places":[68],
+				"hasAudio": "true"
+			},
+			{
+				"id":"238",
+				"title":"Sturlunga: Kirkjan",
+				"source":"",
+				"places":[68],
+				"hasAudio": "true"
+			},
+			{
+				"id":"239",
+				"title":"Sturlunga: Minjar",
+				"source":"",
+				"places":[68],
+				"hasAudio": "true"
+			},
+			{
+				"id":"240",
+				"title":"Sturlunga: Skóli",
+				"source":"",
+				"places":[68],
+				"hasAudio": "true"
+			},
+
+
+
+
+
+
+			{
+				"id":"165",
+				"title":"Sturlunga: Víðines",
+				"source":"",
+				"places":[112],
+				"hasAudio": "true"
+			},
+			{
+				"id":"241",
+				"title":"Sturlunga: Kolbeinn Tumason",
+				"source":"",
+				"places":[111, 112],
+				"hasAudio": "true"
+			},
+
+
+
+
+
+			{
+				"id":"252",
+				"title":"Sturlunga: Miklibær",
+				"source":"",
+				"places":[28],
+				"hasAudio": "true"
+			},
+			{
+				"id":"253",
+				"title":"Sturlunga: Sighvatur Sturluson",
+				"source":"",
+				"places":[28],
+				"hasAudio": "true"
+			},
+			{
+				"id":"254",
+				"title":"Sturlunga: Kálfur Guttormsson",
+				"source":"",
+				"places":[28],
+				"hasAudio": "true"
+			},
+
+
+
+
+
+
+
+			{
+				"id":"166",
+				"title":"Sturlunga: Fosslaug",
+				"source":"",
+				"places":[14],
+				"hasAudio": "true"
+			},
+			{
+				"id":"242",
+				"title":"Sturlunga: Baðferðir",
+				"source":"",
+				"places":[14],
+				"hasAudio": "true"
+			},
+
+
+
+
+			{
+				"id":"167",
+				"title":"Sturlunga: Örlygsstaðir",
+				"source":"",
+				"places":[113],
+				"hasAudio": "true"
+			},
+			{
+				"id":"243",
+				"title":"Sturlunga: Sturla Sighvatsson",
+				"source":"",
+				"places":[113],
+				"hasAudio": "true"
+			},
+
+
+
+
+			{
+				"id":"168",
+				"title":"Sturlunga: Selvík á Skaga",
+				"source":"",
+				"places":[114],
+				"hasAudio": "true"
+			},
+
+
+
+
+			{
+				"id":"169",
+				"title":"Sturlunga: Silfrastaðir",
+				"source":"",
+				"places":[31],
+				"hasAudio": "true"
+			},
+			{
+				"id":"245",
+				"title":"Sturlunga: Varnarbardagar Ásbirninga 1238-1246",
+				"source":"",
+				"places":[31],
+				"hasAudio": "true"
+			},
+
+
+
+
+
+			{
+				"id":"170",
+				"title":"Sturlunga: Haugsnes",
+				"source":"",
+				"places":[115],
+				"hasAudio": "true"
+			},
+			{
+				"id":"246",
+				"title":"Sturlunga: Brandur Kolbeinsson",
+				"source":"",
+				"places":[115],
+				"hasAudio": "true"
+			},
+			{
+				"id":"247",
+				"title":"Sturlunga: Þórður kakali",
+				"source":"",
+				"places":[115],
+				"hasAudio": "true"
+			},
+
+
+
+
+
+
+			{
+				"id":"171",
+				"title":"Sturlunga: Flugumýri",
+				"source":"",
+				"places":[116],
+				"hasAudio": "true"
+
+			},
+			{
+				"id":"244",
+				"title":"Sturlunga: Kolbeinn ungi",
+				"source":"",
+				"places":[114, 116],
+				"hasAudio": "true"
+			},
+			{
+				"id":"248",
+				"title":"Sturlunga: Gissur Þorvaldsson",
+				"source":"",
+				"places":[116],
+				"hasAudio": "true"
+			},
+
+
+
+
+			{
+				"id":"172",
+				"title":"Sturlunga: Geldingaholt",
+				"source":"",
+				"places":[117],
+				"hasAudio": "true"
+			},
+			{
+				"id":"250",
+				"title":"Sturlunga: Jórunn Kálfsdóttir og Brandur Kolbeinsson",
+				"source":"",
+				"places":[117],
+				"hasAudio": "true"
+			},
+			{
+				"id":"251",
+				"title":"Sturlunga: Kálfur og Þorgeir Brandssynir",
+				"source":"",
+				"places":[117],
+				"hasAudio": "true"
+			},
+			{
+				"id":"248",
+				"title":"Sturlunga: Gissur Þorvaldsson",
+				"source":"",
+				"places":[116, 117]
+			},
+
+
+
+
+
+			{
+				"id":"173",
+				"title":"Sturlunga: Reynistaður",
+				"source":"",
+				"places":[18],
+				"hasAudio": "true"
+			},
+
+
+
+
+			{
+				"id":"256",
+				"title":"Grettis saga: Hegranesþing",
+				"source":"",
+				"places":[62],
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"257",
+				"title":"Grettis saga: Drangey",
+				"source":"",
+				"places":[96],
+				"hasAudio": "true"
+			},
+			
+			{
+				"id":"274",
+				"title":"Grettis saga: Drangey, framhald",
+				"source":"",
+				"places":[96],
+				"hasAudio": "true"
+			}
+		]
+	},
+	{
+		"id": "sturlunga_en",
+
+		"intro":{
+			"id":"267",
+			"title":"Skagafjörður in the Middle Ages",
+			"source":"",
+			"hasAudio": "true"
+		},
+
+		"data":[
+			{
+				"id":"174",
+				"title":"Sturlunga: Flugumýri farm",
+				"source":"",
+				"places":[116],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"175",
+				"title":"Sturlunga: Geldingaholt farm",
+				"source":"",
+				"places":[117],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"176",
+				"title":"Sturlunga: Haugsnes peninsula",
+				"source":"",
+				"places":[115],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"177",
+				"title":"Sturlunga: Hegranes assembly site",
+				"source":"",
+				"places":[62],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"178",
+				"title":"Sturlunga: Hólar",
+				"source":"",
+				"places":[68],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"179",
+				"title":"Sturlunga: Reynistaður church farm",
+				"source":"",
+				"places":[18],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"180",
+				"title":"Sturlunga: Selvík ",
+				"source":"",
+				"places":[114],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"181",
+				"title":"Sturlunga: Víðimýri church farm",
+				"source":"",
+				"places":[111],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"182",
+				"title":"Sturlunga: Örlygsstaðir",
+				"source":"",
+				"places":[113],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"258",
+				"title":"Grettis saga: Hegranesþing",
+				"source":"",
+				"places":[62],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"259",
+				"title":"Grettis saga: Drangey",
+				"source":"",
+				"places":[96],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"275",
+				"title":"Grettis saga: Drangey, part 2",
+				"source":"",
+				"places":[96],
+				"hasAudio": "true"
+			},
+
+			{
+				"id":"276",
+				"title":"Grettis saga: Drangey, part 3",
+				"source":"",
+				"places":[96],
+				"hasAudio": "true"
+			}
+		]
+	},
+	{
+		"id": "services",
+
+		"data":[
+			{
+				"id":"206",
+				"title":"Lögreglustöðin / Police",
+				"source":"",
+				"places":[120],
+				"text":"",
+				"type":13,
+				"url":"http://www.logreglan.is/",
+				"types":[
+					"police"
+				]
+			},
+			{
+				"id":"207",
+				"title":"Sjúkrahúsið / Hospital",
+				"source":"",
+				"places":[121],
+				"text":"",
+				"type":14,
+				"url":"http://www.hskrokur.is/",
+				"types":[
+					"hospital"
+				]
+			},
+			{
+				"id":"208",
+				"title":"Skagfirðingabúð",
+				"source":"",
+				"places":[122],
+				"text":"",
+				"type":12,
+				"url":"http://www.ks.is/is/",
+				"types":[
+					"supermarket"
+				]
+			},
+			{
+				"id":"209",
+				"title":"KS Varmahlíð",
+				"source":"",
+				"places":[123],
+				"text":"",
+				"type":12,
+				"url":"http://www.ks.is/is/",
+				"types":[
+					"supermarket"
+				]
+			},
+			{
+				"id":"210",
+				"title":"KS Hofsós",
+				"source":"",
+				"places":[124],
+				"text":"",
+				"type":12,
+				"url":"http://www.ks.is/is/",
+				"types":[
+					"supermarket"
+				]
+			},
+			{
+				"id":"211",
+				"title":"KS Ketilás",
+				"source":"",
+				"places":[125],
+				"text":"",
+				"type":12,
+				"url":"http://www.ks.is/is/",
+				"types":[
+					"supermarket"
+				]
+			},
+			{
+				"id":"212",
+				"title":"Kjarninn",
+				"source":"",
+				"places":[126],
+				"text":"",
+				"type":15,
+				"url":"http://www.ks.is/is/",
+				"types":[
+					"garage"
+				]
+			},
+			{
+				"id":"213",
+				"title":"Áki Eðalbílar",
+				"source":"",
+				"places":[127],
+				"text":"",
+				"type":15,
+				"url":"https://www.facebook.com/aki.edalbilar",
+				"types":[
+					"garage"
+				]
+			},
+			{
+				"id":"214",
+				"title":"Ólafshús",
+				"source":"",
+				"places":[128],
+				"text":"",
+				"type":16,
+				"url":"http://www.olafshus.is/en/",
+				"types":[
+					"restaurant"
+				]
+			},
+			{
+				"id":"215",
+				"title":"Kaffi Krókur",
+				"source":"",
+				"places":[129],
+				"text":"",
+				"type":16,
+				"url":"http://www.kaffikrokur.is/en/",
+				"types":[
+					"restaurant"
+				]
+			},
+			{
+				"id":"216",
+				"title":"Hard Wok",
+				"source":"",
+				"places":[130],
+				"text":"",
+				"type":16,
+				"url":"https://www.facebook.com/pages/Hard-Wok-Cafe/222907574392112",
+				"types":[
+					"restaurant"
+				]
+			},
+			{
+				"id":"217",
+				"title":"Hótel Varmahlíð",
+				"source":"",
+				"places":[131],
+				"text":"",
+				"type":17,
+				"url":"http://www.hotelvarmahlid.is/",
+				"types":[
+					"hotel"
+				]
+			},
+			{
+				"id":"218",
+				"title":"Hótel Mikligarður",
+				"source":"",
+				"places":[132],
+				"text":"",
+				"type":17,
+				"url":"http://www.arctichotels.is/",
+				"types":[
+					"hotel"
+				]
+			},
+			{
+				"id":"219",
+				"title":"Mikligarður Guesthouse",
+				"source":"",
+				"places":[133],
+				"text":"",
+				"type":17,
+				"url":"http://www.arctichotels.is/",
+				"types":[
+					"hotel"
+				]
+			},
+			{
+				"id":"220",
+				"title":"Hótel Tindastóll",
+				"source":"",
+				"places":[134],
+				"text":"",
+				"type":17,
+				"url":"http://www.arctichotels.is/",
+				"types":[
+					"hotel"
+				]
+			},
+			{
+				"id":"221",
+				"title":"Sundlaug Sauðárkróks",
+				"source":"",
+				"places":[135],
+				"text":"",
+				"type":18,
+				"url":"http://www.skagafjordur.is/is/thjonusta/ithrottir-og-fristundastarf/ithrottamannvirki/sundlaugar-i-skagafirdi",
+				"types":[
+					"swimmingpool"
+				]
+			},
+			{
+				"id":"222",
+				"title":"Sundlaugin á Hofsósi",
+				"source":"",
+				"places":[136],
+				"text":"",
+				"type":18,
+				"url":"http://www.skagafjordur.is/is/thjonusta/ithrottir-og-fristundastarf/ithrottamannvirki/sundlaugar-i-skagafirdi",
+				"types":[
+					"swimmingpool"
+				]
+			},
+			{
+				"id":"223",
+				"title":"Sundlaugin í Varmahlíð",
+				"source":"",
+				"places":[137],
+				"text":"",
+				"type":18,
+				"url":"http://www.skagafjordur.is/is/thjonusta/ithrottir-og-fristundastarf/ithrottamannvirki/sundlaugar-i-skagafirdi",
+				"types":[
+					"swimmingpool"
+				]
+			},
+			{
+				"id":"224",
+				"title":"Sundlaugin Sólgörðum",
+				"source":"",
+				"places":[138],
+				"text":"",
+				"type":18,
+				"url":"http://www.skagafjordur.is/is/thjonusta/ithrottir-og-fristundastarf/ithrottamannvirki/sundlaugar-i-skagafirdi",
+				"types":[
+					"swimmingpool"
+				]
+			},
+			{
+				"id":"225",
+				"title":"Glaumbær",
+				"source":"",
+				"places":[139],
+				"text":"Closed during winter",
+				"type":22,
+				"url":"http://www.glaumbaer.is/is",
+				"types":[
+					"museum"
+				]
+			},
+			{
+				"id":"226",
+				"title":"Minjahúsið - The Heritage House Exhibition",
+				"source":"",
+				"places":[140],
+				"text":"",
+				"type":22,
+				"url":"http://www.glaumbaer.is/is",
+				"types":[
+					"museum"
+				]
+			},
+			{
+				"id":"227",
+				"title":"Grettislaug",
+				"source":"",
+				"places":[141],
+				"text":"",
+				"type":19,
+				"url":"http://www.drangey.net/#!the-place/c24p2",
+				"types":[
+					"thermalpool"
+				]
+			},
+			{
+				"id":"228",
+				"title":"Fosslaug",
+				"source":"",
+				"places":[142],
+				"text":"",
+				"type":19,
+				"url":"",
+				"types":[
+					"thermalpool"
+				]
+			},
+			{
+				"id":"229",
+				"title":"Tjaldstæði Varmahlíð",
+				"source":"",
+				"places":[143],
+				"text":"",
+				"type":20,
+				"url":"",
+				"types":[
+					"http://tjoldumiskagafirdi.is/is/varmahlid/"
+				]
+			},
+			{
+				"id":"230",
+				"title":"Tjaldstæði Sauðárkróki",
+				"source":"",
+				"places":[144],
+				"text":"",
+				"type":20,
+				"url":"",
+				"types":[
+					"http://tjoldumiskagafirdi.is/is/saudarkrokur/"
+				]
+			},
+			{
+				"id":"231",
+				"title":"Tjaldstæði Hofsós",
+				"source":"",
+				"places":[145],
+				"text":"",
+				"type":20,
+				"url":"http://tjoldumiskagafirdi.is/is/hofsos/",
+				"types":[
+					""
+				]
+			},
+			{
+				"id":"232",
+				"title":"Tjaldstæði Hólum",
+				"source":"",
+				"places":[146],
+				"text":"",
+				"type":20,
+				"url":"",
+				"types":[
+					"http://tjoldumiskagafirdi.is/is/holar-i-hjaltadal/"
+				]
+			},
+			{
+				"id":"233",
+				"title":"Viking Rafting",
+				"source":"",
+				"places":[147],
+				"text":"",
+				"type":21,
+				"url":"http://vikingrafting.is/",
+				"types":[
+					""
+				]
+			},
+			{
+				"id":"255",
+				"title":"Hestasport",
+				"source":"",
+				"places":[148],
+				"text":"",
+				"type":21,
+				"url":"http://www.riding.is/",
+				"types":[
+					""
+				]
+			},
+			{
+				"id":"268",
+				"title":"Drangey Tours",
+				"source":"",
+				"places":[152],
+				"text":"",
+				"type":21,
+				"url":"",
+				"types":[
+					""
+				]
+			},
+			{
+				"id":"269",
+				"title":"Sauðárkróksbakarí",
+				"source":"",
+				"places":[153],
+				"text":"",
+				"type":23,
+				"url":"http://www.saudarkroksbakari.net/",
+				"types":[
+					""
+				]
+			},
+			{
+				"id":"275",
+				"title":"Bakkaflöt Travel Service",
+				"source":"",
+				"places":[158],
+				"text":"",
+				"type":17,
+				"url":"http://www.bakkaflot.is/",
+				"types":[
+					""
+				]
+			}
+		]
+	},
+	{
+		"id": "hiking",
+
+		"data":[
+			{
+				"id":"270",
+				"title":"Hólabyrða",
+				"source":"",
+				"places":[154],
+				"text":"",
+				"type":24,
+				"url":"",
+				"types":[
+					"hiking"
+				]
+			},
+			{
+				"id":"271",
+				"title":"Tindastóll",
+				"source":"",
+				"places":[155],
+				"text":"",
+				"type":24,
+				"url":"",
+				"types":[
+					"hiking"
+				]
+			},
+			{
+				"id":"272",
+				"title":"Ennishnjúkur",
+				"source":"",
+				"places":[156],
+				"text":"",
+				"type":24,
+				"url":"",
+				"types":[
+					"hiking"
+				]
+			},
+			{
+				"id":"273",
+				"title":"Mælifellshnjúkur",
+				"source":"",
+				"places":[157],
+				"text":"",
+				"type":24,
+				"url":"",
+				"types":[
+					"hiking"
+				]
+			}
+		]
+	}
+]
