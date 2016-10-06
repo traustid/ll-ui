@@ -45,27 +45,27 @@
 		<div id="menuOverlay"></div>
 		<div id="menu">
 			<ul class="menu touch-list">
-				<li class="main"><a rel="front"><span class="is">Forsíða</span><span class="en">Home</span></a></li>
-				<li class="main is"><a class="lang-en" rel="language">English</a></li>
-				<li class="main en"><a class="lang-is" rel="language">Íslenska</a></li>
-				<li><a rel="sturlunga"><h3>
+				<li class="main"><a data-action="front"><span class="is">Forsíða</span><span class="en">Home</span></a></li>
+				<li class="main is"><a data-action="language" class="lang-en" data-value="en">English</a></li>
+				<li class="main en"><a data-action="language" class="lang-is" data-value="is">Íslenska</a></li>
+				<li><a data-action="section" data-value="sturlunga"><h3>
 					<span class="is">Íslendingasögur</span>
 					<span class="en">Sagas</span>
 				</h3></a></li>
-				<li><a rel="services"><h3>
+				<li><a data-action="section" data-value="services"><h3>
 					<span class="is">Þjónusta</span>
 					<span class="en">Service</span>
 				</h3></a></li>
-				<li><a rel="hiking"><h3>
+				<li><a data-action="section" data-value="hiking"><h3>
 					<span class="is">Gönguleiðir</span>
 					<span class="en">Hiking trails</span>
 				</h3></a></li>
-				<li><a rel="legends"><h3>
+				<li><a data-action="section" data-value="stories"><h3>
 					<span class="is">Þjóðsögur</span>
 					<span class="en">Folk legends</span>
 				</h3></a></li>
 				<div id="legendsSubMenu" class="sub-menu">
-					<li class="sub"><a class="type selected" rel="all"><span class="marker"></span>
+					<li class="sub"><a data-action="section" class="type selected" data-value="stories" data-var="all"><span class="marker"></span>
 						<span class="is">Allar</span>
 						<span class="en">All</span>
 					</a></li>
@@ -98,8 +98,9 @@ Staðirnir verða merktir á kortið, þú ýtir á merkið og færð upplýsing
 							<a href="https://play.google.com/store/apps/details?id=com.trily.lifandilandslag">
 						  		<img alt="Android app on Google Play"
 						       src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
-							</a><br/>
-							<a href="https://geo.itunes.apple.com/us/app/lifandi-landslag/id1007335378?mt=8" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+							</a> 
+							<a href="https://geo.itunes.apple.com/us/app/lifandi-landslag/id1007335378?mt=8" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a> 
+							<a target="_blank" href="https://www.microsoft.com/store/apps/9nblggh4wg2n?ocid=badge"><img width="123" height="45" src="https://assets.windowsphone.com/f2f77ec7-9ba9-4850-9ebe-77e366d08adc/English_Get_it_Win_10_InvariantCulture_Default.png" alt="Get it on Windows 10" /></a>
 						</p>
 					</div>
 
@@ -111,8 +112,9 @@ Staðirnir verða merktir á kortið, þú ýtir á merkið og færð upplýsing
 							<a href="https://play.google.com/store/apps/details?id=com.trily.lifandilandslag">
 						  		<img alt="Android app on Google Play"
 						       src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
-							</a><br/>
-							<a href="https://geo.itunes.apple.com/us/app/lifandi-landslag/id1007335378?mt=8" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+							</a> 
+							<a href="https://geo.itunes.apple.com/us/app/lifandi-landslag/id1007335378?mt=8" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a> 
+							<a target="_blank" href="https://www.microsoft.com/store/apps/9nblggh4wg2n?ocid=badge"><img width="123" height="45" src="https://assets.windowsphone.com/f2f77ec7-9ba9-4850-9ebe-77e366d08adc/English_Get_it_Win_10_InvariantCulture_Default.png" alt="Get it on Windows 10" /></a>
 						</p>
 					</div>
 
@@ -267,7 +269,7 @@ Staðirnir verða merktir á kortið, þú ýtir á merkið og færð upplýsing
 
 		<script type="text/template" id="storyTypesTemplate">
 			<% _.each(types, function(item, index)  { %>
-				<li class="sub"><a class="type" rel="<%= item.get('id') %>"><span class="marker"></span><%= item.get('name').replace('saga', 'sögur') %></a></li>
+				<li class="sub"><a class="type" data-action="section" data-value="stories" data-var="<%= item.get('id') %>"><span class="marker"></span><%= item.get('name').replace('saga', 'sögur') %></a></li>
 			<% }); %>
 		</script>
 		

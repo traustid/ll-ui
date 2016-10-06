@@ -54,9 +54,29 @@ var PlaceList = Backbone.Collection.extend({
 		return new PlaceList(filtered);
 	},
 
-	byType: function(type) {
+	byType: function(section, type) {
+		var placeIds = [];
+
+		var storageId = app.storiesList.dataStorage[section+'_'+window.appLanguage].label;
+
+		_.each(app.storiesList.get(storageId).get('data'), function(story) {
+			if (type) {
+				if (story.type == type) {
+					placeIds = _.union(placeIds, story.places);
+				}
+			}
+			else {
+				placeIds = _.union(placeIds, story.places);
+			}
+		});
+		placeIds = _.uniq(placeIds);
+
+		return new PlaceList(_.filter(this.models, function(place) {
+			return placeIds.indexOf(place.get('id')) > -1;
+		}));
+
 		filtered = this.filter(function(place) {
-			var byPlace = app.storiesList.byPlace(place.get('id'));
+			var byPlace = app.storiesList.byPlace(place.get('id'), section);
 			var hasType = false;
 			_.each(byPlace.models, function(story) {
 				if (story.get('type') == type) {
@@ -65,6 +85,7 @@ var PlaceList = Backbone.Collection.extend({
 			});
 			return hasType;
 		});
+
 		return new PlaceList(filtered);
 	},
 
@@ -86,90 +107,71 @@ var MapCollection = Backbone.Collection.extend({
 var StoriesList = Backbone.Collection.extend({
 	model: StoryInfo,
 	currentList: 'stories',
+	url: 'data/data.json',
 
 	initializeData: function() {
-		for (var item in this.dataUrls) {
-			this.dataUrls[item].data_is = new Backbone.Collection();
-			this.dataUrls[item].data_is.url = this.dataUrls[item].is;
-			this.dataUrls[item].data_is.on('reset', this.subCollectionReset, this);
-			this.dataUrls[item].data_is.fetch({
-				reset: true
-			});
-
-			this.dataUrls[item].data_en = new Backbone.Collection();
-			this.dataUrls[item].data_en.url = this.dataUrls[item].is;
-			this.dataUrls[item].data_en.on('reset', this.subCollectionReset, this);
-			this.dataUrls[item].data_en.fetch({
-				reset: true
-			});
-		}
-	},
-
-	subCollectionCount: 0,
-	subCollectionReset: function() {
-		this.subCollectionCount++;
-
-		console.log(this.subCollectionCount);
-
-		if (this.subCollectionCount == 8) {
-			this.trigger('dataLoaded');
-		}
+		this.fetch({
+			reset: true
+		});
 	},
 
 	byPlace: function(place, dataList) {
+		var filtered = [];
+
 		if (dataList) {
-			console.log('byPlace and we have the dataList variable set!');
-			filtered = _.filter(this.dataUrls[dataList]['data_'+window.appLanguage].at(0).get('data'), function(story) {
+			var storageId = this.dataStorage[dataList+'_'+window.appLanguage].label;
+
+			filtered = _.filter(this.get(storageId).get('data'), function(story) {
 				return story.places.indexOf(place) > -1;
 			});
 		}
-		else {		
-			filtered = this.filter(function(story) {
-				return story.get("places").indexOf(place) > -1;
+		else {
+				_.each(this.models, function(dataItem) {
+				filtered = _.union(filtered, _.filter(dataItem.get('data'), function(story) {
+					return story.places.indexOf(place) > -1;
+				}));
 			});
 		}
 		return new StoriesList(filtered);
 	},
 
-	fetch: function(options) {
-		options = (options == undefined ? {}: options);
-		options.reset = true;
-		return Backbone.Collection.prototype.fetch.call(this, options);
-	},
-
 	parse: function(response) {
-		if (response.intro != undefined) {
-			this.intro = response.intro;
-		}
-		else {
-			this.intro = undefined;
-		}
-
-		return response.data;
+		return response;
 	},
 
-	dataUrls: {
-		stories: {
-			is: 'data/stories.json',
-			en: 'data/stories-en.json'
+	dataStorage: {
+		stories_is: {
+			label: 'stories'
 		},
-		sturlunga: {
-			is: 'data/sturlunga.json',
-			en: 'data/sturlunga-en.json'
+		stories_en: {
+			label: 'stories_en'
 		},
-		services: {
-			is: 'data/services.json',
-			en: 'data/services.json'
+
+		sturlunga_is: {
+			label: 'sturlunga'
 		},
-		hiking: {
-			is: 'data/hiking.json',
-			en: 'data/hiking.json'
+		sturlunga_en: {
+			label: 'sturlunga_en'
+		},
+
+		services_is: {
+			label: 'services'
+		},
+		services_en: {
+			label: 'services'
+		},
+
+		hiking_is: {
+			label: 'hiking'
+		},
+		hiking_en: {
+			label: 'hiking'
 		}
 	},
 
 	loadData: function(dataList, success) {
 		this.currentList = dataList;
-		this.reset(this.dataUrls[dataList]['data_'+window.appLanguage].at(0).get('data'));
+//		this.reset(this.dataUrls[dataList]['data_'+window.appLanguage].at(0).get('data'));
 	}
 });
 
@@ -220,8 +222,9 @@ var StoryView = Backbone.View.extend({
 	},
 
 	viewStory: function(story) {
-		if (this.model != story) {
-			this.model = story;
+		var storyModel = story.attributes && story.cid ? story : new StoryInfo(story);
+		if (this.model != storyModel) {
+			this.model = storyModel;
 			this.model.on('fetchComplete', _.bind(function() {
 				this.render();
 			}, this));
@@ -635,11 +638,18 @@ var MapLib = function() {
 		this.map.on('popupopen', function(event) {
 			$('.leaflet-map-pane .leaflet-popup-content-wrapper .leaflet-popup-content .stories a').each(function() {
 				$(this).click(function() {
-					app.storiesList.get($(this).data('story')).set({
-						place: $(this).data('place')
+					var storyId = $(this).data('story');
+
+					var storageId = app.storiesList.dataStorage[app.storiesList.currentList+'_'+window.appLanguage].label;
+
+					var currentStory = _.find(app.storiesList.get(storageId).get('data'), function(story) {
+						return story.id == storyId;
 					});
 
-					app.viewStory(app.storiesList.get($(this).data('story')));
+					currentStory['place'] = $(this).data('place');
+
+//					app.viewStory(app.storiesList.get($(this).data('story')));
+					app.viewStory(currentStory);
 
 					if (!isPhoneGap()) {
 						app.appRouter.navigate('place/'+$(this).data('place')+'/story/'+$(this).data('story'));
@@ -649,28 +659,23 @@ var MapLib = function() {
 		});
 
 		this.map.on('zoomend', _.bind(function() {
-			console.log(this.currentBase);
 			if (L.Browser.retina) {
 				if (this.map.getZoom() > 13) {
 					if (this.currentBase != 'openStreetMap' && this.currentBase != 'offline') {
-						console.log('zoomend: set openStreetMap');
 						this.setBaseMap('openStreetMap');
 					}
 				}
 				else if (this.currentBase != 'online_retina' && this.currentBase != 'online' && this.currentBase != 'offline') {
-					console.log('zoomend: set online_retina');
 					this.setBaseMap('online_retina');
 				}
 			}
 			else {
 				if (this.map.getZoom() > 14) {
 					if (this.currentBase != 'openStreetMap' && this.currentBase != 'offline') {
-						console.log('zoomend: set openStreetMap');
 						this.setBaseMap('openStreetMap');
 					}
 				}
 				else if (this.currentBase != 'online_retina' && this.currentBase != 'online' && this.currentBase != 'offline') {
-					console.log('zoomend: set online');
 					this.setBaseMap('online');
 				}
 			}
@@ -702,7 +707,7 @@ var MapLib = function() {
 	};
 
 	this.createMarker = function(data, icon) {
-		var hasAudio = _.find(this.storiesList.byPlace(data.get('id')).models, function(story) {
+		var hasAudio = _.find(this.storiesList.byPlace(data.get('id'), app.storiesList.currentList).models, function(story) {
 			return story.get('hasAudio');
 		}) ? true : false;
 
@@ -863,7 +868,7 @@ var App = function() {
 	};
 	
 	this.onDeviceReady = function(_this) {
-		if (_this.firstRun) {		
+		if (_this.firstRun) {
 			if (isPhoneGap()) {		
 				if (localStorage.getItem('lang') != null) {
 					$('#splash .lang-select').css('display', 'none');
@@ -890,54 +895,53 @@ var App = function() {
 		_this.mapLib.storiesList = _this.storiesList;
 		_this.storiesList.initializeData();
 
-		_this.storiesList.on('dataLoaded', _.bind(function() {
-
-			_this.storiesList.on('reset', function() {
-				_this.mapCollection = new MapCollection();
-				_this.mapCollection.on('reset', function() {
-					_this.mapLib.clearMap();
-					_this.mapLib.addMarkers(_this.mapCollection, function(event, _thisMarker) {
-						_this.markerClick(_this, event, _thisMarker);
-					});
-
-					if (_this.currentLocation != undefined) {
-					}
-					if (!isPhoneGap()) {
-						setTimeout(function() {
-							_this.appRouter = new AppRouter();
-							_this.appRouter.on('route:mainView', function() {
-								if (_this.currentView != 'introView') {
-									_this.closeViews();
-								}
-							});
-							_this.appRouter.on('route:placeView', function(placeId) {
-
-							});
-							_this.appRouter.on('route:storyPlaceView', function(placeId, storyId) {
-								_this.storiesList.get(storyId).set({
-									place: placeId
-								});
-								_this.viewStory(_this.storiesList.get(storyId));
-							});
-							if (_this.firstRun) {
-								Backbone.history.start();
-							}
-						}, 1000);
-					}
-
+		_this.storiesList.on('reset', function() {
+			_this.mapCollection = new MapCollection();
+			_this.mapCollection.on('reset', function() {
+				_this.mapLib.clearMap();
+				_this.mapLib.addMarkers(_this.mapCollection, function(event, _thisMarker) {
+					_this.markerClick(_this, event, _thisMarker);
 				});
 
-				_this.placeList = new PlaceList();
-				_this.placeList.on('reset', function() {
-					_this.mapCollection.reset(_this.placeList.getPopulated().models);
-				});
-
-				if (_this.storiesList.intro != undefined) {
-					_this.viewStory(new StoryInfo(_this.storiesList.intro));
+				if (_this.currentLocation != undefined) {
 				}
+				if (!isPhoneGap()) {
+					setTimeout(function() {
+						_this.appRouter = new AppRouter();
+						_this.appRouter.on('route:mainView', function() {
+							if (_this.currentView != 'introView') {
+								_this.closeViews();
+							}
+						});
+						_this.appRouter.on('route:placeView', function(placeId) {
+
+						});
+						_this.appRouter.on('route:storyPlaceView', function(placeId, storyId) {
+							_this.storiesList.get(storyId).set({
+								place: placeId
+							});
+							_this.viewStory(_this.storiesList.get(storyId));
+						});
+						if (_this.firstRun) {
+							Backbone.history.start();
+						}
+					}, 1000);
+				}
+
 			});
-			_this.storiesList.loadData('stories');
-		}, this));
+
+			_this.placeList = new PlaceList();
+			_this.placeList.on('reset', function() {
+//				_this.mapCollection.reset(_this.placeList.getPopulated().models);
+				_this.mapCollection.reset(_this.placeList.byType('stories', undefined).models)
+			});
+
+			var storageId = app.storiesList.dataStorage[app.storiesList.currentList+'_'+window.appLanguage].label;
+
+			if (_this.storiesList.get(_this.storiesList.currentList+'_'+window.appLanguage).intro != undefined) {
+				_this.viewStory(new StoryInfo(_this.storiesList.intro));
+			}
+		});
 
 
 		if (_this.firstRun) {
@@ -1073,71 +1077,64 @@ var App = function() {
 			_this.storyTypesView.on('render', function() {
 				$('#menu ul li a').each(function() {
 					$(this).click(function() {
-						var action = $(this).attr('rel');
 						$('#menu ul li a').removeClass('selected');
 						$(this).addClass('selected');
-						if ($(this).hasClass('type')) {
-							if (_this.storiesList.currentList == 'sturlunga') {
-								_this.storiesList.loadData('stories');
-								$('#menu ul li a[rel=all]').addClass('selected');
-							}
-							else {
-								if ($(this).attr('rel') == 'all') {
-									_this.storiesList.loadData('stories');
-									_this.mapCollection.reset(_this.placeList.models);
+
+						var action = $(this).data('action');
+
+						switch(action) {
+							case 'front':
+								_this.setView('introView');
+								_this.menuOut();
+
+								break;
+							case 'language':
+								if ($(this).hasClass('lang-is')) {
+									window.appLanguage = 'is';
+								}
+								if ($(this).hasClass('lang-en')) {
+									window.appLanguage = 'en';
+								}
+
+								localStorage.setItem('lang', window.appLanguage);
+
+								$(document.body).removeClass('lang-is');
+								$(document.body).removeClass('lang-en');
+								$(document.body).addClass('lang-'+window.appLanguage);
+
+								_this.onDeviceReady(_this);
+								_this.menuOut();
+
+								break;
+							case 'section':
+								var value = $(this).data('value');
+								var type = $(this).data('var');
+								
+								_this.storiesList.currentList = value;
+
+								if (value == 'stories') {
+									if (!type) {
+										$('#legendsSubMenu').toggleClass('open');
+									}
+									else {
+										_this.mapCollection.reset(_this.placeList.byType(value, type == 'all' ? undefined : type).models);
+
+										_this.menuOut();
+									}
 								}
 								else {
-	//								_this.storiesList.loadData('stories');
-									_this.mapCollection.reset(_this.placeList.byType($(this).attr('rel')).models);
-								}
-							}
-							_this.closeViews();
-						}
-						else {
-							switch(action) {
-								case 'front':
-									_this.setView('introView');
-									break;
-								case 'legends':
-									_this.storiesList.loadData('stories');
-	//								$('#menu ul li a[rel=all]').addClass('selected');
-									$('#legendsSubMenu').toggleClass('open');
-									break;
-								case 'sturlunga':
-									_this.storiesList.loadData('sturlunga');
-									break;
-								case 'services':
-									_this.storiesList.loadData('services');
-									break;
-								case 'hiking':
-									_this.storiesList.loadData('hiking');
-									break;
-								case 'about':
-									_this.setView('aboutView');
-									break;
-								case 'language':
-									if ($(this).hasClass('lang-is')) {
-										window.appLanguage = 'is';
-									}
-									if ($(this).hasClass('lang-en')) {
-										window.appLanguage = 'en';
-									}
+									_this.mapCollection.reset(_this.placeList.byType(value, type).models);
 
-									localStorage.setItem('lang', window.appLanguage);
-
-									$(document.body).removeClass('lang-is');
-									$(document.body).removeClass('lang-en');
-									$(document.body).addClass('lang-'+window.appLanguage);
-
-									_this.onDeviceReady(_this);
 									_this.menuOut();
+								}
 
-									break;
-							}
-						}
+								var storageId = app.storiesList.dataStorage[_this.storiesList.currentList+'_'+window.appLanguage].label;
 
-						if (action != 'legends') {
-							_this.menuOut();
+								if (_this.storiesList.get(storageId).get('intro') != undefined) {
+									_this.viewStory(new StoryInfo(_this.storiesList.get(storageId).get('intro')));
+								}
+
+								break;
 						}
 					});
 				});
@@ -1386,7 +1383,6 @@ var App = function() {
     };
 
 	this.menuIn = function() {
-		console.log('menuIn');
 		$('#legendsSubMenu').removeClass('open');
 		$('#menu').addClass('visible');
 		$('#menuOverlay').css('display', 'block');
@@ -1404,7 +1400,7 @@ var App = function() {
 	this.viewStory = function(story) {
 		this.setView('storyView');
 		this.storyView.viewStory(story);
-		if (story.get('hasAudio') == 'true') {
+		if (story.hasAudio == 'true') {
 			if ($('#viewAudioButton').hasClass('selected')) {
 				this.storyView.viewAudio();
 			}
